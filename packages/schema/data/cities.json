@@ -67,6 +67,39 @@
       }
     },
     {
+      "id": "ostrava",
+      "country_id": "cz",
+      "name": {
+        "en": "Ostrava",
+        "cs": "Ostrava",
+        "de": "Ostrau",
+        "es": "Ostrava",
+        "fr": "Ostrava",
+        "nl": "Ostrava"
+      },
+      "slug": {
+        "en": "ostrava",
+        "cs": "ostrava",
+        "de": "ostrau",
+        "es": "ostrava",
+        "fr": "ostrava",
+        "nl": "ostrava"
+      },
+      "coords": {
+        "lat": 49.8209,
+        "lng": 18.2625
+      },
+      "visibility": {
+        "eu": true,
+        "cz": true,
+        "de": true,
+        "es": false,
+        "fr": false,
+        "nl": false,
+        "uk": true
+      }
+    },
+    {
       "id": "berlin",
       "country_id": "de",
       "name": {
@@ -92,6 +125,303 @@
       "visibility": {
         "eu": true,
         "cz": true,
+        "de": true,
+        "es": true,
+        "fr": true,
+        "nl": true,
+        "uk": true
+      }
+    },
+    {
+      "id": "hamburg",
+      "country_id": "de",
+      "name": {
+        "en": "Hamburg",
+        "cs": "Hamburk",
+        "de": "Hamburg",
+        "es": "Hamburgo",
+        "fr": "Hambourg",
+        "nl": "Hamburg"
+      },
+      "slug": {
+        "en": "hamburg",
+        "cs": "hamburk",
+        "de": "hamburg",
+        "es": "hamburgo",
+        "fr": "hambourg",
+        "nl": "hamburg"
+      },
+      "coords": {
+        "lat": 53.5511,
+        "lng": 9.9937
+      },
+      "visibility": {
+        "eu": true,
+        "cz": true,
+        "de": true,
+        "es": true,
+        "fr": true,
+        "nl": true,
+        "uk": true
+      }
+    },
+    {
+      "id": "munich",
+      "country_id": "de",
+      "name": {
+        "en": "Munich",
+        "cs": "Mnichov",
+        "de": "München",
+        "es": "Múnich",
+        "fr": "Munich",
+        "nl": "München"
+      },
+      "slug": {
+        "en": "munich",
+        "cs": "mnichov",
+        "de": "muenchen",
+        "es": "munich",
+        "fr": "munich",
+        "nl": "munchen"
+      },
+      "coords": {
+        "lat": 48.1351,
+        "lng": 11.5820
+      },
+      "visibility": {
+        "eu": true,
+        "cz": true,
+        "de": true,
+        "es": true,
+        "fr": true,
+        "nl": true,
+        "uk": true
+      }
+    },
+    {
+      "id": "paris",
+      "country_id": "fr",
+      "name": {
+        "en": "Paris",
+        "cs": "Paříž",
+        "de": "Paris",
+        "es": "París",
+        "fr": "Paris",
+        "nl": "Parijs"
+      },
+      "slug": {
+        "en": "paris",
+        "cs": "pariz",
+        "de": "paris",
+        "es": "paris",
+        "fr": "paris",
+        "nl": "parijs"
+      },
+      "coords": {
+        "lat": 48.8566,
+        "lng": 2.3522
+      },
+      "visibility": {
+        "eu": true,
+        "cz": true,
+        "de": true,
+        "es": true,
+        "fr": true,
+        "nl": true,
+        "uk": true
+      }
+    },
+    {
+      "id": "lyon",
+      "country_id": "fr",
+      "name": {
+        "en": "Lyon",
+        "cs": "Lyon",
+        "de": "Lyon",
+        "es": "Lyon",
+        "fr": "Lyon",
+        "nl": "Lyon"
+      },
+      "slug": {
+        "en": "lyon",
+        "cs": "lyon",
+        "de": "lyon",
+        "es": "lyon",
+        "fr": "lyon",
+        "nl": "lyon"
+      },
+      "coords": {
+        "lat": 45.7640,
+        "lng": 4.8357
+      },
+      "visibility": {
+        "eu": true,
+        "cz": false,
+        "de": true,
+        "es": true,
+        "fr": true,
+        "nl": true,
+        "uk": true
+      }
+    },
+    {
+      "id": "marseille",
+      "country_id": "fr",
+      "name": {
+        "en": "Marseille",
+        "cs": "Marseille",
+        "de": "Marseille",
+        "es": "Marsella",
+        "fr": "Marseille",
+        "nl": "Marseille"
+      },
+      "slug": {
+        "en": "marseille",
+        "cs": "marseille",
+        "de": "marseille",
+        "es": "marsella",
+        "fr": "marseille",
+        "nl": "marseille"
+      },
+      "coords": {
+        "lat": 43.2965,
+        "lng": 5.3698
+      },
+      "visibility": {
+        "eu": true,
+        "cz": false,
+        "de": true,
+        "es": true,
+        "fr": true,
+        "nl": true,
+        "uk": true
+      }
+    },
+    {
+      "id": "amsterdam",
+      "country_id": "nl",
+      "name": {
+        "en": "Amsterdam",
+        "cs": "Amsterdam",
+        "de": "Amsterdam",
+        "es": "Ámsterdam",
+        "fr": "Amsterdam",
+        "nl": "Amsterdam"
+      },
+      "slug": {
+        "en": "amsterdam",
+        "cs": "amsterdam",
+        "de": "amsterdam",
+        "es": "amsterdam",
+        "fr": "amsterdam",
+        "nl": "amsterdam"
+      },
+      "coords": {
+        "lat": 52.3676,
+        "lng": 4.9041
+      },
+      "visibility": {
+        "eu": true,
+        "cz": true,
+        "de": true,
+        "es": true,
+        "fr": true,
+        "nl": true,
+        "uk": true
+      }
+    },
+    {
+      "id": "rotterdam",
+      "country_id": "nl",
+      "name": {
+        "en": "Rotterdam",
+        "cs": "Rotterdam",
+        "de": "Rotterdam",
+        "es": "Róterdam",
+        "fr": "Rotterdam",
+        "nl": "Rotterdam"
+      },
+      "slug": {
+        "en": "rotterdam",
+        "cs": "rotterdam",
+        "de": "rotterdam",
+        "es": "rotterdam",
+        "fr": "rotterdam",
+        "nl": "rotterdam"
+      },
+      "coords": {
+        "lat": 51.9225,
+        "lng": 4.4792
+      },
+      "visibility": {
+        "eu": true,
+        "cz": false,
+        "de": true,
+        "es": true,
+        "fr": true,
+        "nl": true,
+        "uk": true
+      }
+    },
+    {
+      "id": "london",
+      "country_id": "uk",
+      "name": {
+        "en": "London",
+        "cs": "Londýn",
+        "de": "London",
+        "es": "Londres",
+        "fr": "Londres",
+        "nl": "Londen"
+      },
+      "slug": {
+        "en": "london",
+        "cs": "londyn",
+        "de": "london",
+        "es": "londres",
+        "fr": "londres",
+        "nl": "londen"
+      },
+      "coords": {
+        "lat": 51.5074,
+        "lng": -0.1278
+      },
+      "visibility": {
+        "eu": true,
+        "cz": true,
+        "de": true,
+        "es": true,
+        "fr": true,
+        "nl": true,
+        "uk": true
+      }
+    },
+    {
+      "id": "manchester",
+      "country_id": "uk",
+      "name": {
+        "en": "Manchester",
+        "cs": "Manchester",
+        "de": "Manchester",
+        "es": "Mánchester",
+        "fr": "Manchester",
+        "nl": "Manchester"
+      },
+      "slug": {
+        "en": "manchester",
+        "cs": "manchester",
+        "de": "manchester",
+        "es": "manchester",
+        "fr": "manchester",
+        "nl": "manchester"
+      },
+      "coords": {
+        "lat": 53.4808,
+        "lng": -2.2426
+      },
+      "visibility": {
+        "eu": true,
+        "cz": false,
         "de": true,
         "es": true,
         "fr": true,

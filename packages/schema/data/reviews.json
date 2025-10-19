@@ -1,0 +1,104 @@
+{
+  "reviews": [
+    {
+      "globalID": "review-example-001",
+      "type": "review",
+      "target": {
+        "type": "profile",
+        "globalID": "profile-karolina-001",
+        "name": "Karolina"
+      },
+      "author": {
+        "user_id": "user-abc123",
+        "handle": "reviewer#1234",
+        "display_name": "Martin K.",
+        "reputation_level": "bronze",
+        "review_count": 5
+      },
+      "rating": {
+        "overall": 5,
+        "appearance": 5,
+        "service": 5,
+        "location": 4,
+        "value": 5
+      },
+      "title": {
+        "en": "Amazing experience",
+        "cs": "Úžasný zážitek",
+        "de": "Erstaunliche Erfahrung",
+        "es": "Experiencia increíble",
+        "fr": "Expérience incroyable",
+        "nl": "Geweldige ervaring"
+      },
+      "content": {
+        "en": "Had a wonderful time, highly professional and friendly service.",
+        "cs": "Skvělý čas, velmi profesionální a přátelská služba.",
+        "de": "Hatte eine wunderbare Zeit, sehr professionell und freundlich.",
+        "es": "Pasé un tiempo maravilloso, servicio muy profesional y amigable.",
+        "fr": "J'ai passé un moment merveilleux, service très professionnel et sympathique.",
+        "nl": "Had een geweldige tijd, zeer professionele en vriendelijke service."
+      },
+      "visit_date": "2025-10-15",
+      "services_used": [
+        "girlfriend-experience",
+        "massage"
+      ],
+      "photos": [],
+      "verification": {
+        "status": "verified",
+        "method": "phone_verification",
+        "verified_date": "2025-10-16"
+      },
+      "status": "published",
+      "quarantine": {
+        "is_quarantined": false,
+        "reason": null,
+        "quarantine_date": null
+      },
+      "content_policy_check": {
+        "has_pricing": false,
+        "has_contact_info": false,
+        "is_spam": false,
+        "checked_date": "2025-10-16"
+      },
+      "engagement": {
+        "helpful_votes": 12,
+        "not_helpful_votes": 1,
+        "report_count": 0
+      },
+      "business_response": null,
+      "metadata": {
+        "created_date": "2025-10-16T14:30:00Z",
+        "last_updated_date": "2025-10-16T14:30:00Z",
+        "locale": "cs",
+        "ip_address_hash": "hashed_ip_value"
+      },
+      "visibility": {
+        "eu": true,
+        "cz": true,
+        "de": false,
+        "es": false,
+        "fr": false,
+        "nl": false,
+        "uk": false
+      }
+    }
+  ],
+  "metadata": {
+    "version": "1.0.0",
+    "last_updated": "2025-10-19",
+    "total_reviews": 1,
+    "schema_notes": [
+      "status: draft|published|quarantine|removed - NEVER permanently delete",
+      "verification.status: unverified|pending|verified|rejected",
+      "verification.method: email|phone_verification|photo_proof|admin_verified",
+      "quarantine.is_quarantined: true if contains pricing, contact info, or spam",
+      "target.type: profile|organization - what is being reviewed",
+      "author.reputation_level: bronze|silver|gold - based on review count and quality",
+      "rating.overall: 1-5 stars (required)",
+      "rating sub-categories: appearance, service, location, value (optional)",
+      "services_used: array of service IDs from services vocabulary",
+      "business_response: {date, content{locale}, author} - optional response from business owner"
+    ]
+  }
+}

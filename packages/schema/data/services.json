@@ -1,0 +1,603 @@
+{
+  "services": {
+    "escorts": [
+      {
+        "id": "girlfriend-experience",
+        "key": "gfe",
+        "name": {
+          "en": "Girlfriend Experience (GFE)",
+          "cs": "Girlfriend Experience (GFE)",
+          "de": "Girlfriend Experience (GFE)",
+          "es": "Experiencia de novia (GFE)",
+          "fr": "Expérience petite amie (GFE)",
+          "nl": "Girlfriend Experience (GFE)"
+        },
+        "slug": {
+          "en": "girlfriend-experience",
+          "cs": "girlfriend-experience",
+          "de": "girlfriend-experience",
+          "es": "experiencia-de-novia",
+          "fr": "experience-petite-amie",
+          "nl": "girlfriend-experience"
+        }
+      },
+      {
+        "id": "pornstar-experience",
+        "key": "pse",
+        "name": {
+          "en": "Pornstar Experience (PSE)",
+          "cs": "Pornstar Experience (PSE)",
+          "de": "Pornstar Experience (PSE)",
+          "es": "Experiencia porno (PSE)",
+          "fr": "Expérience pornstar (PSE)",
+          "nl": "Pornster Experience (PSE)"
+        },
+        "slug": {
+          "en": "pornstar-experience",
+          "cs": "pornstar-experience",
+          "de": "pornstar-experience",
+          "es": "experiencia-porno",
+          "fr": "experience-pornstar",
+          "nl": "pornster-experience"
+        }
+      },
+      {
+        "id": "massage",
+        "key": "massage",
+        "name": {
+          "en": "Massage",
+          "cs": "Masáž",
+          "de": "Massage",
+          "es": "Masaje",
+          "fr": "Massage",
+          "nl": "Massage"
+        },
+        "slug": {
+          "en": "massage",
+          "cs": "masaz",
+          "de": "massage",
+          "es": "masaje",
+          "fr": "massage",
+          "nl": "massage"
+        }
+      },
+      {
+        "id": "dinner-date",
+        "key": "dinner_date",
+        "name": {
+          "en": "Dinner Date",
+          "cs": "Večeře",
+          "de": "Dinner Date",
+          "es": "Cena romántica",
+          "fr": "Dîner romantique",
+          "nl": "Diner Date"
+        },
+        "slug": {
+          "en": "dinner-date",
+          "cs": "vecere",
+          "de": "dinner-date",
+          "es": "cena-romantica",
+          "fr": "diner-romantique",
+          "nl": "diner-date"
+        }
+      },
+      {
+        "id": "overnight",
+        "key": "overnight",
+        "name": {
+          "en": "Overnight",
+          "cs": "Přes noc",
+          "de": "Übernachtung",
+          "es": "Noche completa",
+          "fr": "Nuit complète",
+          "nl": "Overnachting"
+        },
+        "slug": {
+          "en": "overnight",
+          "cs": "pres-noc",
+          "de": "ubernachtung",
+          "es": "noche-completa",
+          "fr": "nuit-complete",
+          "nl": "overnachting"
+        }
+      },
+      {
+        "id": "travel-companion",
+        "key": "travel",
+        "name": {
+          "en": "Travel Companion",
+          "cs": "Cestovní doprovod",
+          "de": "Reisebegleitung",
+          "es": "Acompañante de viaje",
+          "fr": "Compagnon de voyage",
+          "nl": "Reisgezelschap"
+        },
+        "slug": {
+          "en": "travel-companion",
+          "cs": "cestovni-doprovod",
+          "de": "reisebegleitung",
+          "es": "acompanante-de-viaje",
+          "fr": "compagnon-de-voyage",
+          "nl": "reisgezelschap"
+        }
+      },
+      {
+        "id": "couples",
+        "key": "couples",
+        "name": {
+          "en": "Couples",
+          "cs": "Páry",
+          "de": "Paare",
+          "es": "Parejas",
+          "fr": "Couples",
+          "nl": "Koppels"
+        },
+        "slug": {
+          "en": "couples",
+          "cs": "pary",
+          "de": "paare",
+          "es": "parejas",
+          "fr": "couples",
+          "nl": "koppels"
+        }
+      },
+      {
+        "id": "role-play",
+        "key": "roleplay",
+        "name": {
+          "en": "Role Play",
+          "cs": "Hraní rolí",
+          "de": "Rollenspiele",
+          "es": "Juego de roles",
+          "fr": "Jeu de rôle",
+          "nl": "Rollenspel"
+        },
+        "slug": {
+          "en": "role-play",
+          "cs": "hrani-roli",
+          "de": "rollenspiele",
+          "es": "juego-de-roles",
+          "fr": "jeu-de-role",
+          "nl": "rollenspel"
+        }
+      }
+    ],
+    "erotic-massage": [
+      {
+        "id": "thai-massage",
+        "key": "thai",
+        "name": {
+          "en": "Thai Massage",
+          "cs": "Thajská masáž",
+          "de": "Thai-Massage",
+          "es": "Masaje tailandés",
+          "fr": "Massage thaïlandais",
+          "nl": "Thaise massage"
+        },
+        "slug": {
+          "en": "thai-massage",
+          "cs": "thajska-masaz",
+          "de": "thai-massage",
+          "es": "masaje-tailandes",
+          "fr": "massage-thailandais",
+          "nl": "thaise-massage"
+        }
+      },
+      {
+        "id": "tantra-massage",
+        "key": "tantra",
+        "name": {
+          "en": "Tantra Massage",
+          "cs": "Tantrická masáž",
+          "de": "Tantra-Massage",
+          "es": "Masaje tántrico",
+          "fr": "Massage tantrique",
+          "nl": "Tantra massage"
+        },
+        "slug": {
+          "en": "tantra-massage",
+          "cs": "tantricka-masaz",
+          "de": "tantra-massage",
+          "es": "masaje-tantrico",
+          "fr": "massage-tantrique",
+          "nl": "tantra-massage"
+        }
+      },
+      {
+        "id": "nuru-massage",
+        "key": "nuru",
+        "name": {
+          "en": "Nuru Massage",
+          "cs": "Nuru masáž",
+          "de": "Nuru-Massage",
+          "es": "Masaje Nuru",
+          "fr": "Massage Nuru",
+          "nl": "Nuru massage"
+        },
+        "slug": {
+          "en": "nuru-massage",
+          "cs": "nuru-masaz",
+          "de": "nuru-massage",
+          "es": "masaje-nuru",
+          "fr": "massage-nuru",
+          "nl": "nuru-massage"
+        }
+      },
+      {
+        "id": "body-to-body",
+        "key": "b2b",
+        "name": {
+          "en": "Body to Body (B2B)",
+          "cs": "Body to Body (B2B)",
+          "de": "Body to Body (B2B)",
+          "es": "Cuerpo a cuerpo (B2B)",
+          "fr": "Corps à corps (B2B)",
+          "nl": "Body to Body (B2B)"
+        },
+        "slug": {
+          "en": "body-to-body",
+          "cs": "body-to-body",
+          "de": "body-to-body",
+          "es": "cuerpo-a-cuerpo",
+          "fr": "corps-a-corps",
+          "nl": "body-to-body"
+        }
+      },
+      {
+        "id": "lingam-massage",
+        "key": "lingam",
+        "name": {
+          "en": "Lingam Massage",
+          "cs": "Lingam masáž",
+          "de": "Lingam-Massage",
+          "es": "Masaje Lingam",
+          "fr": "Massage Lingam",
+          "nl": "Lingam massage"
+        },
+        "slug": {
+          "en": "lingam-massage",
+          "cs": "lingam-masaz",
+          "de": "lingam-massage",
+          "es": "masaje-lingam",
+          "fr": "massage-lingam",
+          "nl": "lingam-massage"
+        }
+      },
+      {
+        "id": "prostate-massage",
+        "key": "prostate",
+        "name": {
+          "en": "Prostate Massage",
+          "cs": "Masáž prostaty",
+          "de": "Prostata-Massage",
+          "es": "Masaje de próstata",
+          "fr": "Massage de la prostate",
+          "nl": "Prostaat massage"
+        },
+        "slug": {
+          "en": "prostate-massage",
+          "cs": "masaz-prostaty",
+          "de": "prostata-massage",
+          "es": "masaje-de-prostata",
+          "fr": "massage-de-la-prostate",
+          "nl": "prostaat-massage"
+        }
+      },
+      {
+        "id": "couples-massage",
+        "key": "couples",
+        "name": {
+          "en": "Couples Massage",
+          "cs": "Párová masáž",
+          "de": "Paarmassage",
+          "es": "Masaje en pareja",
+          "fr": "Massage en couple",
+          "nl": "Koppel massage"
+        },
+        "slug": {
+          "en": "couples-massage",
+          "cs": "parova-masaz",
+          "de": "paarmassage",
+          "es": "masaje-en-pareja",
+          "fr": "massage-en-couple",
+          "nl": "koppel-massage"
+        }
+      }
+    ],
+    "bdsm-dominatrix": [
+      {
+        "id": "bondage",
+        "key": "bondage",
+        "name": {
+          "en": "Bondage",
+          "cs": "Bondage",
+          "de": "Bondage",
+          "es": "Bondage",
+          "fr": "Bondage",
+          "nl": "Bondage"
+        },
+        "slug": {
+          "en": "bondage",
+          "cs": "bondage",
+          "de": "bondage",
+          "es": "bondage",
+          "fr": "bondage",
+          "nl": "bondage"
+        }
+      },
+      {
+        "id": "discipline",
+        "key": "discipline",
+        "name": {
+          "en": "Discipline",
+          "cs": "Disciplína",
+          "de": "Disziplin",
+          "es": "Disciplina",
+          "fr": "Discipline",
+          "nl": "Discipline"
+        },
+        "slug": {
+          "en": "discipline",
+          "cs": "disciplina",
+          "de": "disziplin",
+          "es": "disciplina",
+          "fr": "discipline",
+          "nl": "discipline"
+        }
+      },
+      {
+        "id": "domination",
+        "key": "domination",
+        "name": {
+          "en": "Domination",
+          "cs": "Dominace",
+          "de": "Dominanz",
+          "es": "Dominación",
+          "fr": "Domination",
+          "nl": "Dominantie"
+        },
+        "slug": {
+          "en": "domination",
+          "cs": "dominace",
+          "de": "dominanz",
+          "es": "dominacion",
+          "fr": "domination",
+          "nl": "dominantie"
+        }
+      },
+      {
+        "id": "submission",
+        "key": "submission",
+        "name": {
+          "en": "Submission",
+          "cs": "Podřízenost",
+          "de": "Unterwerfung",
+          "es": "Sumisión",
+          "fr": "Soumission",
+          "nl": "Onderdanigheid"
+        },
+        "slug": {
+          "en": "submission",
+          "cs": "podrizenost",
+          "de": "unterwerfung",
+          "es": "sumision",
+          "fr": "soumission",
+          "nl": "onderdanigheid"
+        }
+      },
+      {
+        "id": "role-reversal",
+        "key": "role_reversal",
+        "name": {
+          "en": "Role Reversal",
+          "cs": "Výměna rolí",
+          "de": "Rollentausch",
+          "es": "Inversión de roles",
+          "fr": "Inversion des rôles",
+          "nl": "Rollenomkering"
+        },
+        "slug": {
+          "en": "role-reversal",
+          "cs": "vymena-roli",
+          "de": "rollentausch",
+          "es": "inversion-de-roles",
+          "fr": "inversion-des-roles",
+          "nl": "rollenomkering"
+        }
+      },
+      {
+        "id": "foot-fetish",
+        "key": "foot_fetish",
+        "name": {
+          "en": "Foot Fetish",
+          "cs": "Nohy",
+          "de": "Fußfetisch",
+          "es": "Fetichismo de pies",
+          "fr": "Fétichisme des pieds",
+          "nl": "Voetenfetisj"
+        },
+        "slug": {
+          "en": "foot-fetish",
+          "cs": "nohy",
+          "de": "fussfetisch",
+          "es": "fetichismo-de-pies",
+          "fr": "fetichisme-des-pieds",
+          "nl": "voetenfetisj"
+        }
+      },
+      {
+        "id": "latex-leather",
+        "key": "latex",
+        "name": {
+          "en": "Latex & Leather",
+          "cs": "Latex a kůže",
+          "de": "Latex & Leder",
+          "es": "Látex y cuero",
+          "fr": "Latex & Cuir",
+          "nl": "Latex & Leer"
+        },
+        "slug": {
+          "en": "latex-leather",
+          "cs": "latex-a-kuze",
+          "de": "latex-leder",
+          "es": "latex-y-cuero",
+          "fr": "latex-cuir",
+          "nl": "latex-leer"
+        }
+      },
+      {
+        "id": "humiliation",
+        "key": "humiliation",
+        "name": {
+          "en": "Humiliation",
+          "cs": "Ponížení",
+          "de": "Erniedrigung",
+          "es": "Humillación",
+          "fr": "Humiliation",
+          "nl": "Vernedering"
+        },
+        "slug": {
+          "en": "humiliation",
+          "cs": "ponizeni",
+          "de": "erniedrigung",
+          "es": "humillacion",
+          "fr": "humiliation",
+          "nl": "vernedering"
+        }
+      }
+    ],
+    "digital-models": [
+      {
+        "id": "onlyfans",
+        "key": "onlyfans",
+        "name": {
+          "en": "OnlyFans",
+          "cs": "OnlyFans",
+          "de": "OnlyFans",
+          "es": "OnlyFans",
+          "fr": "OnlyFans",
+          "nl": "OnlyFans"
+        },
+        "slug": {
+          "en": "onlyfans",
+          "cs": "onlyfans",
+          "de": "onlyfans",
+          "es": "onlyfans",
+          "fr": "onlyfans",
+          "nl": "onlyfans"
+        }
+      },
+      {
+        "id": "cam-shows",
+        "key": "cam",
+        "name": {
+          "en": "Cam Shows",
+          "cs": "Cam show",
+          "de": "Cam-Shows",
+          "es": "Shows en cámara",
+          "fr": "Shows cam",
+          "nl": "Cam shows"
+        },
+        "slug": {
+          "en": "cam-shows",
+          "cs": "cam-show",
+          "de": "cam-shows",
+          "es": "shows-en-camara",
+          "fr": "shows-cam",
+          "nl": "cam-shows"
+        }
+      },
+      {
+        "id": "custom-content",
+        "key": "custom",
+        "name": {
+          "en": "Custom Content",
+          "cs": "Obsah na míru",
+          "de": "Benutzerdefinierter Inhalt",
+          "es": "Contenido personalizado",
+          "fr": "Contenu personnalisé",
+          "nl": "Aangepaste inhoud"
+        },
+        "slug": {
+          "en": "custom-content",
+          "cs": "obsah-na-miru",
+          "de": "benutzerdefinierter-inhalt",
+          "es": "contenido-personalizado",
+          "fr": "contenu-personnalise",
+          "nl": "aangepaste-inhoud"
+        }
+      },
+      {
+        "id": "video-calls",
+        "key": "video_calls",
+        "name": {
+          "en": "Video Calls",
+          "cs": "Video hovory",
+          "de": "Videoanrufe",
+          "es": "Videollamadas",
+          "fr": "Appels vidéo",
+          "nl": "Videogesprekken"
+        },
+        "slug": {
+          "en": "video-calls",
+          "cs": "video-hovory",
+          "de": "videoanrufe",
+          "es": "videollamadas",
+          "fr": "appels-video",
+          "nl": "videogesprekken"
+        }
+      },
+      {
+        "id": "photos-videos",
+        "key": "media",
+        "name": {
+          "en": "Photos & Videos",
+          "cs": "Fotky a videa",
+          "de": "Fotos & Videos",
+          "es": "Fotos y vídeos",
+          "fr": "Photos & Vidéos",
+          "nl": "Foto's & Video's"
+        },
+        "slug": {
+          "en": "photos-videos",
+          "cs": "fotky-a-videa",
+          "de": "fotos-videos",
+          "es": "fotos-y-videos",
+          "fr": "photos-videos",
+          "nl": "fotos-videos"
+        }
+      },
+      {
+        "id": "sexting",
+        "key": "sexting",
+        "name": {
+          "en": "Sexting",
+          "cs": "Sexting",
+          "de": "Sexting",
+          "es": "Sexting",
+          "fr": "Sexting",
+          "nl": "Sexting"
+        },
+        "slug": {
+          "en": "sexting",
+          "cs": "sexting",
+          "de": "sexting",
+          "es": "sexting",
+          "fr": "sexting",
+          "nl": "sexting"
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "last_updated": "2025-10-19",
+    "schema_notes": [
+      "Services are organized by category_key (escorts, erotic-massage, bdsm-dominatrix, digital-models)",
+      "Each service has an id (unique), key (short identifier), name (i18n), and slug (i18n)",
+      "Services are clickable and filterable in profile listings",
+      "Profiles can list multiple services they offer",
+      "Reviews can reference services_used to show which services were experienced"
+    ]
+  }
+}

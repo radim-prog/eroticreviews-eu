@@ -57,6 +57,93 @@
         "nl": true,
         "uk": true
       }
+    },
+    {
+      "id": "fr",
+      "iso2": "FR",
+      "name": {
+        "en": "France",
+        "cs": "Francie",
+        "de": "Frankreich",
+        "es": "Francia",
+        "fr": "France",
+        "nl": "Frankrijk"
+      },
+      "slug": {
+        "en": "france",
+        "cs": "francie",
+        "de": "frankreich",
+        "es": "francia",
+        "fr": "france",
+        "nl": "frankrijk"
+      },
+      "visibility": {
+        "eu": true,
+        "cz": true,
+        "de": true,
+        "es": true,
+        "fr": true,
+        "nl": true,
+        "uk": true
+      }
+    },
+    {
+      "id": "nl",
+      "iso2": "NL",
+      "name": {
+        "en": "Netherlands",
+        "cs": "Nizozemsko",
+        "de": "Niederlande",
+        "es": "Países Bajos",
+        "fr": "Pays-Bas",
+        "nl": "Nederland"
+      },
+      "slug": {
+        "en": "netherlands",
+        "cs": "nizozemsko",
+        "de": "niederlande",
+        "es": "paises-bajos",
+        "fr": "pays-bas",
+        "nl": "nederland"
+      },
+      "visibility": {
+        "eu": true,
+        "cz": true,
+        "de": true,
+        "es": true,
+        "fr": true,
+        "nl": true,
+        "uk": true
+      }
+    },
+    {
+      "id": "uk",
+      "iso2": "GB",
+      "name": {
+        "en": "United Kingdom",
+        "cs": "Velká Británie",
+        "de": "Vereinigtes Königreich",
+        "es": "Reino Unido",
+        "fr": "Royaume-Uni",
+        "nl": "Verenigd Koninkrijk"
+      },
+      "slug": {
+        "en": "united-kingdom",
+        "cs": "velka-britanie",
+        "de": "vereinigtes-konigreich",
+        "es": "reino-unido",
+        "fr": "royaume-uni",
+        "nl": "verenigd-koninkrijk"
+      },
+      "visibility": {
+        "eu": true,
+        "cz": true,
+        "de": true,
+        "es": true,
+        "fr": true,
+        "nl": true,
+        "uk": true
+      }
     }
   ]
 }

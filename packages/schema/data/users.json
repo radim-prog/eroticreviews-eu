@@ -1,0 +1,75 @@
+{
+  "users": [
+    {
+      "user_id": "user-abc123",
+      "firebase_uid": "firebase-uid-xyz789",
+      "handle": "reviewer#1234",
+      "display_name": "Martin K.",
+      "email": "user@example.com",
+      "email_verified": true,
+      "avatar_url": null,
+      "bio": {
+        "en": "Experienced reviewer sharing honest opinions",
+        "cs": "Zkušený recenzent sdílející upřímné názory",
+        "de": "Erfahrener Rezensent teilt ehrliche Meinungen",
+        "es": "Revisor experimentado compartiendo opiniones honestas",
+        "fr": "Critique expérimenté partageant des opinions honnêtes",
+        "nl": "Ervaren recensent deelt eerlijke meningen"
+      },
+      "reputation": {
+        "level": "bronze",
+        "points": 50,
+        "review_count": 5,
+        "helpful_votes_received": 23,
+        "verified_reviews": 3
+      },
+      "activity": {
+        "created_date": "2025-09-01T10:00:00Z",
+        "last_login_date": "2025-10-19T08:30:00Z",
+        "last_activity_date": "2025-10-16T14:30:00Z"
+      },
+      "liked_profiles": [],
+      "privacy": {
+        "show_display_name": true,
+        "show_review_count": true,
+        "allow_messages": false
+      },
+      "roles": ["user"],
+      "status": "active",
+      "locale_preference": "cs"
+    }
+  ],
+  "metadata": {
+    "version": "1.0.0",
+    "last_updated": "2025-10-19",
+    "total_users": 1,
+    "schema_notes": [
+      "handle: unique identifier with discriminator (e.g., 'john#1234')",
+      "display_name: can have duplicates, shown in reviews",
+      "reputation.level: bronze (0-99 points) | silver (100-499) | gold (500+)",
+      "reputation.points: earned from reviews, helpful votes, verified reviews",
+      "status: active|suspended|banned|deleted",
+      "roles: ['user'] | ['user', 'admin'] | ['user', 'moderator']",
+      "liked_profiles: array of profile globalIDs user has liked",
+      "Handle generation: normalize display_name + random 4-digit discriminator",
+      "Points calculation: +10 per review, +5 per verified review, +1 per helpful vote"
+    ],
+    "reputation_levels": {
+      "bronze": {
+        "min_points": 0,
+        "max_points": 99,
+        "benefits": ["Write reviews", "Vote on reviews"]
+      },
+      "silver": {
+        "min_points": 100,
+        "max_points": 499,
+        "benefits": ["All bronze benefits", "Highlighted reviews", "Priority support"]
+      },
+      "gold": {
+        "min_points": 500,
+        "max_points": null,
+        "benefits": ["All silver benefits", "Verified badge", "Early access to features"]
+      }
+    }
+  }
+}

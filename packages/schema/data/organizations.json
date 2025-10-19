@@ -1,0 +1,103 @@
+{
+  "organizations": [
+    {
+      "globalID": "org-example-001",
+      "type": "organization",
+      "country_id": "cz",
+      "city_id": "prague",
+      "category_ids": ["escort-agencies"],
+      "slug_current": {
+        "en": "luxury-escort-prague",
+        "cs": "luxury-escort-praha",
+        "de": "luxury-escort-prag",
+        "es": "luxury-escort-praga",
+        "fr": "luxury-escort-prague",
+        "nl": "luxury-escort-praag"
+      },
+      "slug_history": [],
+      "name": {
+        "en": "Luxury Escort Prague",
+        "cs": "Luxury Escort Praha",
+        "de": "Luxury Escort Prag",
+        "es": "Luxury Escort Praga",
+        "fr": "Luxury Escort Prague",
+        "nl": "Luxury Escort Praag"
+      },
+      "description": {
+        "en": "Premium escort agency in Prague providing VIP services",
+        "cs": "Prémiová escort agentura v Praze poskytující VIP služby",
+        "de": "Premium Escort-Agentur in Prag bietet VIP-Services",
+        "es": "Agencia de escort premium en Praga que ofrece servicios VIP",
+        "fr": "Agence d'escort premium à Prague proposant des services VIP",
+        "nl": "Premium escort bureau in Praag met VIP diensten"
+      },
+      "contact": {
+        "address": {
+          "street": "Wenceslas Square 1",
+          "city": "Prague",
+          "postal_code": "110 00",
+          "country": "Czech Republic"
+        },
+        "phone": "+420123456789",
+        "email": "info@example.com",
+        "website": "https://example.com",
+        "social": {
+          "instagram": "luxuryescortprague",
+          "telegram": "@luxuryescort"
+        }
+      },
+      "business_hours": {
+        "monday": {"open": "10:00", "close": "22:00"},
+        "tuesday": {"open": "10:00", "close": "22:00"},
+        "wednesday": {"open": "10:00", "close": "22:00"},
+        "thursday": {"open": "10:00", "close": "22:00"},
+        "friday": {"open": "10:00", "close": "23:00"},
+        "saturday": {"open": "12:00", "close": "23:00"},
+        "sunday": {"open": "12:00", "close": "20:00"}
+      },
+      "associated_profiles": [],
+      "verification": {
+        "status": "verified",
+        "date": "2025-10-01",
+        "verified_by": "admin"
+      },
+      "banner_tier": "bronze",
+      "review_stats": {
+        "average_rating": 0,
+        "review_count": 0,
+        "last_review_date": null
+      },
+      "backlinks": {
+        "count": 0,
+        "verified_count": 0
+      },
+      "activity": {
+        "created_date": "2025-10-01",
+        "last_activity_date": "2025-10-01",
+        "last_updated_by": "admin"
+      },
+      "visibility": {
+        "eu": true,
+        "cz": true,
+        "de": false,
+        "es": false,
+        "fr": false,
+        "nl": false,
+        "uk": false
+      },
+      "status": "published"
+    }
+  ],
+  "metadata": {
+    "version": "1.0.0",
+    "last_updated": "2025-10-19",
+    "total_organizations": 1,
+    "schema_notes": [
+      "banner_tier: bronze|silver|gold|platinum - based on review count and backlinks",
+      "status: draft|published|quarantine|suspended",
+      "verification.status: unverified|pending|verified|rejected",
+      "type: organization (fixed value to distinguish from profiles)",
+      "associated_profiles: Array of profile globalIDs that belong to this organization"
+    ]
+  }
+}

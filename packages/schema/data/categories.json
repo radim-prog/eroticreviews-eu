@@ -59,6 +59,86 @@
         "fr": "bdsm-dominatrices",
         "nl": "bdsm-dominatrixen"
       }
+    },
+    {
+      "id": "digital-models",
+      "key": "digital-models",
+      "name": {
+        "en": "Digital Models",
+        "cs": "Digitální modelky",
+        "de": "Digitale Models",
+        "es": "Modelos digitales",
+        "fr": "Modèles numériques",
+        "nl": "Digitale modellen"
+      },
+      "slug": {
+        "en": "digital-models",
+        "cs": "digitalni-modelky",
+        "de": "digitale-models",
+        "es": "modelos-digitales",
+        "fr": "modeles-numeriques",
+        "nl": "digitale-modellen"
+      }
+    },
+    {
+      "id": "escort-agencies",
+      "key": "escort-agencies",
+      "name": {
+        "en": "Escort Agencies",
+        "cs": "Escort agentury",
+        "de": "Escort-Agenturen",
+        "es": "Agencias de escort",
+        "fr": "Agences d'escort",
+        "nl": "Escort bureaus"
+      },
+      "slug": {
+        "en": "escort-agencies",
+        "cs": "escort-agentury",
+        "de": "escort-agenturen",
+        "es": "agencias-de-escort",
+        "fr": "agences-escort",
+        "nl": "escort-bureaus"
+      }
+    },
+    {
+      "id": "massage-salons",
+      "key": "massage-salons",
+      "name": {
+        "en": "Massage Salons",
+        "cs": "Masážní salony",
+        "de": "Massage-Salons",
+        "es": "Salones de masaje",
+        "fr": "Salons de massage",
+        "nl": "Massage salons"
+      },
+      "slug": {
+        "en": "massage-salons",
+        "cs": "masazni-salony",
+        "de": "massage-salons",
+        "es": "salones-de-masaje",
+        "fr": "salons-de-massage",
+        "nl": "massage-salons"
+      }
+    },
+    {
+      "id": "bdsm-studios",
+      "key": "bdsm-studios",
+      "name": {
+        "en": "BDSM Studios",
+        "cs": "BDSM studia",
+        "de": "BDSM-Studios",
+        "es": "Estudios BDSM",
+        "fr": "Studios BDSM",
+        "nl": "BDSM studio's"
+      },
+      "slug": {
+        "en": "bdsm-studios",
+        "cs": "bdsm-studia",
+        "de": "bdsm-studios",
+        "es": "estudios-bdsm",
+        "fr": "studios-bdsm",
+        "nl": "bdsm-studios"
+      }
     }
   ]
 }

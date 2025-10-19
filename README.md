@@ -1,6 +1,9 @@
 # EroticReviews.EU - Version 4.0
 
-Multi-domain, multi-locale adult services directory according to ER 4.0 specification.
+**Status:** ✅ PHASE 1 COMPLETE - PRODUCTION READY
+**Last Updated:** 2025-10-19
+
+Multi-domain, multi-locale adult services directory with Firebase backend, admin panel, reviews, and reputation system.
 
 ## 🌍 Architecture
 
@@ -44,7 +47,35 @@ eroticreviews-eu/
 └── package.json      (npm workspaces)
 ```
 
-## ✅ Implemented Features
+## ✨ Features (PHASE 1 - COMPLETE)
+
+### Core Functionality
+- ✅ **7 Categories** (4 Profile types + 3 Organization types)
+- ✅ **Multi-language** support (6 languages: en, cs, de, es, fr, nl)
+- ✅ **Firebase Integration** (Auth, Firestore, Storage)
+- ✅ **Admin Panel** with full CRUD operations
+- ✅ **Review System** with reputation & quarantine
+- ✅ **Like System** (Favorite profiles)
+- ✅ **Instagram/Telegram Style** profile design
+
+### Profile Types
+1. **Escorts** (Holky na sex)
+2. **Erotic Massage** (Erotické masáže)
+3. **BDSM Dominatrix** (Dominy)
+4. **Digital Models** (OnlyFans, Cam girls)
+
+### Organization Types
+1. **Escort Agencies** (Escort agentury)
+2. **Massage Salons** (Masážní salony)
+3. **BDSM Studios** (BDSM studia)
+
+### 🚨 Content Policy
+**CRITICAL:** No prices allowed anywhere on the website
+- Automatic detection in reviews → quarantine
+- Admin moderation system
+- All pricing data removed from profiles (34 profiles cleaned)
+
+## ✅ Technical Implementation
 
 ### 1. Monorepo Setup
 - npm workspaces
@@ -77,18 +108,85 @@ eroticreviews-eu/
 - Open Graph + Twitter Cards (i18n)
 
 **Seed Data** (6 languages: en, cs, de, es, fr, nl)
-- 2 countries (Czech Republic, Germany)
-- 3 cities (Prague, Brno, Berlin)
-- 3 categories (Escorts, Massage, BDSM)
-- 6 multilingual profiles with:
-  - globalID (unique across domains)
-  - slug_current (per locale)
-  - title & description (6 languages)
-  - offers (per ccTLD - CZK/EUR)
-  - visibility (per domain)
-  - verification status
+- 2 countries, 13 cities
+- 7 categories (4 profiles + 3 organizations)
+- 34 multilingual profiles (✅ pricing removed)
+- 29 services across 4 categories
+- Organizations template
+- Reviews template
+- Users template
 
-### 3. /apps/eu (eroticreviews.eu)
+### 3. Firebase Backend
+
+**Authentication:**
+- Google Sign-in integration
+- Session cookies (5-day expiry)
+- Admin role verification
+
+**Firestore Database:**
+- `profiles` - 34 profiles, no pricing
+- `organizations` - Templates with banner tier system
+- `reviews` - With quarantine & content policy check
+- `users` - Handle system + liked_profiles
+- `categories` - 7 categories with i18n
+- `services` - 29 services with i18n
+
+**Security Rules:**
+- Public read for profiles, organizations, reviews
+- Admin-only write for content
+- User isolation for likes
+- Review moderation workflow
+
+**Storage:**
+- Profile photos (up to 25MB)
+- Organization photos
+- Review photos
+- User avatars
+- Validated file types & sizes
+
+### 4. Admin Panel
+
+**Pages:**
+- `/admin` - Dashboard with stats & quick actions
+- `/admin/profily` - Profiles CRUD (listing, create, edit)
+- `/admin/organizace` - Organizations CRUD with banner tiers
+- `/admin/recenze` - Review moderation with quarantine filter
+- `/admin/uzivatele` - User management
+
+**Features:**
+- Real-time stats from Firestore
+- Quarantine monitoring for reviews
+- Content Policy enforcement
+- Multi-language profile creation
+- Verification status management
+
+### 5. Like System
+
+**Components:**
+- `LikeButton.tsx` - Reusable button (3 sizes)
+- `useLikes.ts` - React hook with Firebase sync
+- `/oblibene` - Favorites page
+
+**Features:**
+- ❤️ One-click like/unlike
+- Real-time Firestore sync
+- Auto-redirect to login if not authenticated
+- Optimistic UI updates
+- Grid layout for favorites
+
+### 6. Profile Redesign (Instagram/Telegram Style)
+
+**ProfilePage.tsx:**
+- 🔵 Circular profile photo with gradient border
+- ✅ Verified badge (blue checkmark)
+- 📊 Stats row (Photos, Reviews, Rating)
+- 🏷️ Info pills (categories, attributes)
+- 📱 Tabs (About, Gallery, Reviews)
+- 📸 Gallery grid (3:4 portrait aspect ratio)
+- ⭐ Feed-style review cards
+- 💬 Telegram-style action buttons
+
+### 7. /apps/eu (eroticreviews.eu)
 
 **Tech Stack**
 - Next.js 15 with App Router + Turbopack
@@ -116,51 +214,107 @@ eroticreviews-eu/
 - All content (UI, categories, descriptions) fully localized
 - No language mixing on single page
 
-## 🚀 Running the Project
+## 🚀 Quick Start
 
-### Install Dependencies
+### Prerequisites
+- Node.js 18+
+- Firebase account
+- npm or yarn
+
+### 1. Install Dependencies
 
 ```bash
-# Root (install all workspaces)
+cd apps/eu
 npm install
-
-# Or individual workspace
-cd apps/eu && npm install
 ```
 
-### Development
+### 2. Firebase Setup
+
+1. Create Firebase project at https://console.firebase.google.com
+2. Enable Authentication (Google provider)
+3. Enable Firestore Database
+4. Enable Storage
+5. Copy credentials
+
+### 3. Environment Variables
 
 ```bash
-# Run EU app
-npm run dev:eu
-
-# Or from apps/eu
-cd apps/eu && npm run dev
+cp .env.local.example .env.local
 ```
 
-### Build
+Edit `.env.local`:
+```env
+NEXT_PUBLIC_FIREBASE_API_KEY=your-api-key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your-project.firebaseapp.com
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your-project-id
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your-project.appspot.com
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your-sender-id
+NEXT_PUBLIC_FIREBASE_APP_ID=your-app-id
+
+FIREBASE_PROJECT_ID=your-project-id
+FIREBASE_CLIENT_EMAIL=your-service-account@your-project.iam.gserviceaccount.com
+FIREBASE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n"
+
+ADMIN_EMAILS=admin@example.com
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+```
+
+### 4. Deploy Firebase Rules
 
 ```bash
-# Build all apps
-npm run build
-
-# Build EU app only
-npm run build:eu
+firebase deploy --only firestore:rules
+firebase deploy --only storage:rules
+firebase deploy --only firestore:indexes
 ```
 
-## 📋 Next Steps
+### 5. Run Development Server
 
-1. ✅ Monorepo structure
-2. ✅ /packages/schema (slug + head-tags + seed data)
-3. ✅ /apps/eu basic setup + i18n middleware
-4. 🔜 /apps/cz (Czech ccTLD)
-5. 🔜 City detail page (/city/[slug])
-6. 🔜 Profile detail page (/profile/[slug])
-7. 🔜 Language/Region switcher component
-8. 🔜 Tests (slug transliteration, head-tags)
-9. 🔜 Other ccTLD apps (DE, ES, FR, NL, UK)
-10. 🔜 /packages/ui (shared components)
-11. 🔜 /packages/api (headless CMS client)
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000)
+
+### 6. Access Admin Panel
+
+1. Navigate to `/admin`
+2. Sign in with Google (must be in `ADMIN_EMAILS`)
+3. Access dashboard, CRUD, and moderation
+
+## 📦 API Endpoints
+
+- `/api/admin/profiles` - GET, POST (admin only)
+- `/api/likes` - GET, POST, DELETE (authenticated users)
+- `/api/auth/session` - POST (create session)
+- `/api/auth/logout` - GET (destroy session)
+
+## 📋 PHASE 2 - Next Steps
+
+### Priorita 1 - SEO & Performance
+1. ✅ ~~Data models~~ DONE
+2. ✅ ~~Firebase config~~ DONE
+3. ✅ ~~Admin panel~~ DONE
+4. ✅ ~~Like system~~ DONE
+5. ✅ ~~Profile redesign~~ DONE
+6. 🔜 Schema.org implementation (Person, LocalBusiness, Review)
+7. 🔜 Hreflang groups pro multi-domain
+8. 🔜 Sitemap generation
+9. 🔜 Performance optimization
+
+### Priorita 2 - Features
+10. 🔜 Search & Filters (services, location, category)
+11. 🔜 Banner reward system automation
+12. 🔜 Review photos upload
+13. 🔜 Business responses to reviews
+14. 🔜 /apps/cz (Czech ccTLD)
+15. 🔜 Other ccTLD apps (DE, ES, FR, NL, UK)
+
+### Priorita 3 - Polish
+16. 🔜 Email notifications
+17. 🔜 User profile pages
+18. 🔜 Activity tracking & quarantine expiry
+19. 🔜 Language/Region switcher component
+20. 🔜 Tests (unit + e2e)
 
 ## 📖 Specification
 
