@@ -3,10 +3,10 @@ import Link from "next/link";
 import { cities, profiles, categories, countries } from "@eroticreviews/schema/data";
 import { notFound } from "next/navigation";
 
-export default async function CityPage({ params }: { params: { slug: string } }) {
+export default async function CityPage({ params }: { params: Promise<{ slug: string }> }) {
   const locale = await getLocale();
   const isCcTLD = await isCcTLDDomain();
-  const { slug } = params;
+  const { slug } = await params;
 
   // Find city by slug
   const city = cities.find(c => {

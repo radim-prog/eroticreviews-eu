@@ -3,11 +3,11 @@ import Link from "next/link";
 import { cities, profiles, categories, countries } from "@eroticreviews/schema/data";
 import { notFound } from "next/navigation";
 
-export default async function ProfilePage({ params }: { params: { slug: string } }) {
+export default async function ProfilePage({ params }: { params: Promise<{ slug: string }> }) {
   const locale = await getLocale();
   const isCcTLD = await isCcTLDDomain();
   const domain = await getDomain();
-  const { slug } = params;
+  const { slug } = await params;
 
   // Find profile by slug
   const profile = profiles.profiles.find(p => {
