@@ -1,6 +1,6 @@
 import { getLocale, isCcTLDDomain } from "@/lib/locale";
 import Link from "next/link";
-import { cities, categories, countries } from "@eroticreviews/schema/data";
+import { cities, categories, countries, profiles } from "@eroticreviews/schema/data";
 
 export default async function HomePage() {
   const locale = await getLocale();
@@ -164,7 +164,61 @@ export default async function HomePage() {
           })}
         </div>
       </section>
-      
+
+      {/* Featured Profiles */}
+      <section className="container mx-auto px-4 py-12">
+        <h3 className="text-3xl font-bold text-gray-900 mb-8">
+          {locale === 'en' ? 'Featured Profiles' :
+           locale === 'cs' ? 'Doporučené profily' :
+           locale === 'de' ? 'Empfohlene Profile' :
+           locale === 'fr' ? 'Profils en vedette' :
+           locale === 'nl' ? 'Aanbevolen profielen' : 'Featured Profiles'}
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {profiles.profiles.slice(0, 6).map(profile => {
+            const profileTitle = profile.title[localeKey as keyof typeof profile.title] || profile.title.en;
+            const profileSlug = profile.slug_current[localeKey as keyof typeof profile.slug_current] || profile.slug_current.en;
+            const city = cities.find(c => c.id === profile.city_id);
+            const cityName = city?.name[localeKey as keyof typeof city.name] || city?.name.en;
+            const category = categories.find(c => c.category_ids?.includes(profile.category_ids[0]));
+
+            return (
+              <Link
+                key={profile.globalID}
+                href={`${langPrefix}/profile/${profileSlug}`}
+                className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all overflow-hidden group"
+              >
+                {/* Placeholder Image */}
+                <div className="aspect-[4/5] bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center">
+                  <div className="text-6xl">💋</div>
+                </div>
+
+                {/* Profile Info */}
+                <div className="p-4">
+                  <h4 className="text-xl font-bold text-gray-900 group-hover:text-purple-600 transition">
+                    {profileTitle}
+                  </h4>
+                  <p className="text-gray-600 text-sm mt-1">
+                    {profile.attributes.age} {locale === 'en' ? 'years' : locale === 'cs' ? 'let' : locale === 'de' ? 'Jahre' : locale === 'fr' ? 'ans' : locale === 'nl' ? 'jaar' : 'years'} • {cityName}
+                  </p>
+
+                  {/* Verified Badge */}
+                  {profile.verification.status === 'verified' && (
+                    <div className="inline-flex items-center gap-1 mt-2 text-green-600 text-sm font-semibold">
+                      ✓ {locale === 'en' ? 'Verified' : locale === 'cs' ? 'Ověřeno' : locale === 'de' ? 'Verifiziert' : locale === 'fr' ? 'Vérifié' : locale === 'nl' ? 'Geverifieerd' : 'Verified'}
+                    </div>
+                  )}
+
+                  <div className="mt-3 text-purple-600 font-semibold group-hover:underline">
+                    {t.viewProfiles} →
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-gray-900 text-white mt-20">
         <div className="container mx-auto px-4 py-8 text-center">
