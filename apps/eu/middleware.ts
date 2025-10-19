@@ -1,10 +1,10 @@
 /**
- * i18n Middleware for .EU domain
+ * i18n Middleware for Multi-Domain EroticReviews 4.0
  * Based on ER 4.0 spec Chapter 4
- * 
+ *
  * Rules:
- * - / (no prefix) = EN (default)
- * - /{lang}/* = CS, DE, ES, FR, NL, EN-GB
+ * - .eu domain: / (no prefix) = EN, /{lang}/* = CS, DE, ES, FR, NL, EN-GB
+ * - ccTLD domains: automatic locale based on domain (.cz = CS, .de = DE, etc.)
  * - Indexation controlled by ccTLD existence
  */
 
@@ -24,6 +24,22 @@ const LOCALE_PATH_MAP: Record<string, Locale> = {
   'fr': 'fr',
   'nl': 'nl',
   'en-gb': 'en-GB'
+};
+
+// Map ccTLD domains to their locale
+const DOMAIN_LOCALE_MAP: Record<string, Locale> = {
+  'eroticreviews.cz': 'cs',
+  'www.eroticreviews.cz': 'cs',
+  'eroticreviews.de': 'de',
+  'www.eroticreviews.de': 'de',
+  'eroticreviews.es': 'es',
+  'www.eroticreviews.es': 'es',
+  'eroticreviews.fr': 'fr',
+  'www.eroticreviews.fr': 'fr',
+  'eroticreviews.nl': 'nl',
+  'www.eroticreviews.nl': 'nl',
+  'eroticreviews.co.uk': 'en-GB',
+  'www.eroticreviews.co.uk': 'en-GB',
 };
 
 /**
@@ -52,7 +68,7 @@ function getLocaleFromPathname(pathname: string): { locale: Locale; isLangPath: 
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
-  
+
   // Skip middleware for static files and API routes
   if (
     pathname.startsWith('/_next') ||
@@ -62,14 +78,36 @@ export function middleware(request: NextRequest) {
   ) {
     return NextResponse.next();
   }
-  
-  const { locale, isLangPath, pathWithoutLocale } = getLocaleFromPathname(pathname);
-  
+
+  // Get hostname (e.g., eroticreviews.cz, eroticreviews.eu, localhost)
+  const hostname = request.headers.get('host') || '';
+
+  // Check if this is a ccTLD domain with fixed locale
+  const domainLocale = DOMAIN_LOCALE_MAP[hostname];
+
+  let locale: Locale;
+  let isLangPath: boolean;
+  let pathWithoutLocale: string;
+
+  if (domainLocale) {
+    // ccTLD domain - use fixed locale, ignore URL prefixes
+    locale = domainLocale;
+    isLangPath = false; // ccTLD domains don't use /lang/ prefixes
+    pathWithoutLocale = pathname;
+  } else {
+    // .eu domain or localhost - use URL-based locale detection
+    const result = getLocaleFromPathname(pathname);
+    locale = result.locale;
+    isLangPath = result.isLangPath;
+    pathWithoutLocale = result.pathWithoutLocale;
+  }
+
   // Store locale in headers for consumption by pages
   const response = NextResponse.next();
   response.headers.set('x-locale', locale);
   response.headers.set('x-is-lang-path', isLangPath.toString());
-  
+  response.headers.set('x-domain', hostname);
+
   return response;
 }
 
