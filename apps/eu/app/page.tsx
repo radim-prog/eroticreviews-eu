@@ -180,7 +180,6 @@ export default async function HomePage() {
             const profileSlug = profile.slug_current[localeKey as keyof typeof profile.slug_current] || profile.slug_current.en;
             const city = cities.find(c => c.id === profile.city_id);
             const cityName = city?.name[localeKey as keyof typeof city.name] || city?.name.en;
-            const category = categories.find(c => c.category_ids?.includes(profile.category_ids[0]));
 
             return (
               <Link
