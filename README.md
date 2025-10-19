@@ -1,7 +1,11 @@
 # EroticReviews.EU - Version 4.0
 
-**Status:** ✅ PHASE 1 COMPLETE - PRODUCTION READY
-**Last Updated:** 2025-10-19
+**Status:** 🔴 OFFLINE - Weby vypnuty kvůli nedokončenému vývoji
+**Last Updated:** 2025-10-19 20:05 UTC
+
+> ⚠️ **IMPORTANT:** Weby eroticreviews.eu a eroticreviews.cz jsou momentálně OFFLINE (502 Bad Gateway).
+> Aplikace byla vypnuta, aby se veřejnosti nezobrazovala nedokončená verze.
+> Pro instrukce jak zapnout/vypnout viz [SHUTDOWN.md](./SHUTDOWN.md)
 
 Multi-domain, multi-locale adult services directory with Firebase backend, admin panel, reviews, and reputation system.
 
@@ -358,6 +362,30 @@ Per entity (Country/City/Category/Profile):
 
 - `/packages/schema/README.md` - Schema package docs
 - `WebovaArchitektura.pdf` - Full ER 4.0 spec
+- **[SHUTDOWN.md](./SHUTDOWN.md)** - Jak vypnout/zapnout weby (VPS + lokální)
+- **[VPS-SETUP.md](./VPS-SETUP.md)** - VPS setup instrukce
+- **[DEPLOYMENT.md](./DEPLOYMENT.md)** - Deployment guide (Vercel, VPS)
+- **[PROGRESS.md](./PROGRESS.md)** - Detailní progress report
+
+## 🔴 Aktuální stav projektu
+
+**OFFLINE (2025-10-19):**
+- ✅ PHASE 1 dokončena (všechny hlavní funkce)
+- 🔴 Weby vypnuty kvůli nedokončenému vývoji
+- 📝 Potřeba dokončit před dalším spuštěním:
+  - Firebase napojení
+  - Admin panel funkční
+  - Review systém testovaný
+  - Content policy implementována
+
+**Jak zapnout weby:**
+```bash
+# Viz detaily v SHUTDOWN.md
+ssh -i ~/.ssh/hostinger_vps root@72.61.180.98
+cd /root/eroticreviews-eu/apps/eu
+npm run build
+pm2 start "npm start" --name er-eu
+```
 
 ## 📝 License
 
