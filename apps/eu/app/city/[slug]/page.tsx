@@ -19,7 +19,7 @@ export default async function CityPage({ params }: { params: Promise<{ slug: str
   }
 
   // Get profiles for this city
-  const cityProfiles = profiles.profiles.filter(p => p.city_id === city.id);
+  const cityProfiles = profiles.filter(p => p.city_id === city.id);
 
   const cityName = city.name[locale as keyof typeof city.name] || city.name.en;
   const country = countries.find(c => c.id === city.country_id);

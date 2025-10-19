@@ -10,7 +10,7 @@ export default async function ProfilePage({ params }: { params: Promise<{ slug: 
   const { slug } = await params;
 
   // Find profile by slug
-  const profile = profiles.profiles.find(p => {
+  const profile = profiles.find(p => {
     const profileSlug = p.slug_current[locale as keyof typeof p.slug_current] || p.slug_current.en;
     return profileSlug === slug;
   });

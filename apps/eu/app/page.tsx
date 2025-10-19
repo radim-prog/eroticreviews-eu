@@ -175,7 +175,7 @@ export default async function HomePage() {
            locale === 'nl' ? 'Aanbevolen profielen' : 'Featured Profiles'}
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {profiles.profiles.slice(0, 6).map(profile => {
+          {profiles.slice(0, 6).map(profile => {
             const profileTitle = profile.title[localeKey as keyof typeof profile.title] || profile.title.en;
             const profileSlug = profile.slug_current[localeKey as keyof typeof profile.slug_current] || profile.slug_current.en;
             const city = cities.find(c => c.id === profile.city_id);
