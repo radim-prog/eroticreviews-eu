@@ -25,6 +25,24 @@ export async function isLangPath(): Promise<boolean> {
 }
 
 /**
+ * Get current domain from middleware headers
+ */
+export async function getDomain(): Promise<string> {
+  const headersList = await headers();
+  return headersList.get('x-domain') || '';
+}
+
+/**
+ * Check if current domain is a ccTLD (country-code top-level domain)
+ * ccTLD domains don't use /lang/ prefixes in URLs
+ */
+export async function isCcTLDDomain(): Promise<boolean> {
+  const domain = await getDomain();
+  const ccTLDs = ['.cz', '.de', '.fr', '.nl', '.co.uk', '.es'];
+  return ccTLDs.some(tld => domain.endsWith(tld));
+}
+
+/**
  * Get locale metadata (for display)
  */
 export function getLocaleMetadata(locale: Locale) {

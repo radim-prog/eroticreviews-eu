@@ -1,10 +1,11 @@
-import { getLocale } from "@/lib/locale";
+import { getLocale, isCcTLDDomain } from "@/lib/locale";
 import Link from "next/link";
 import { cities, categories, countries } from "@eroticreviews/schema/data";
 
 export default async function HomePage() {
   const locale = await getLocale();
-  
+  const isCcTLD = await isCcTLDDomain();
+
   // Filter cities visible on EU domain
   const visibleCities = cities.filter(city => city.visibility.eu);
   
@@ -77,7 +78,9 @@ export default async function HomePage() {
   };
   
   const localeKey = getLocaleKey(locale);
-  const langPrefix = locale === 'en' ? '' : `/${localeKey}`;
+  // ccTLD domains (e.g., .cz, .de) don't use /lang/ prefixes in URLs
+  // Only .eu domain uses /lang/ prefixes for non-English locales
+  const langPrefix = isCcTLD ? '' : (locale === 'en' ? '' : `/${localeKey}`);
   
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-pink-50">
