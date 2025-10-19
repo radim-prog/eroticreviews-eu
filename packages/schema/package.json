@@ -9,7 +9,8 @@
     "./slug": "./dist/slug.js",
     "./hreflang": "./dist/hreflang.js",
     "./head-tags": "./dist/head-tags.js",
-    "./schema-org": "./dist/schema-org.js"
+    "./schema-org": "./dist/schema-org.js",
+    "./data": "./data/index.ts"
   },
   "scripts": {
     "build": "tsc",
