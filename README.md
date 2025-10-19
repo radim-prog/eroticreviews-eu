@@ -1,135 +1,210 @@
-# Turborepo starter
+# EroticReviews.EU - Version 4.0
 
-This Turborepo starter is maintained by the Turborepo core team.
+Multi-domain, multi-locale adult services directory according to ER 4.0 specification.
 
-## Using this example
+## 🌍 Architecture
 
-Run the following command:
+### Domains
+- **eroticreviews.eu** (mothership) - EN default, i18n subpaths (/{lang})
+- **eroticreviews.cz** - Czech (cs-CZ)
+- **eroticreviews.de** - German (de-DE)
+- **eroticreviews.es** - Spanish (es-ES)
+- **eroticreviews.fr** - French (fr-FR)
+- **eroticreviews.nl** - Dutch (nl-NL)
+- **eroticreviews.uk** - English GB (en-GB)
 
-```sh
-npx create-turbo@latest
+### Monorepo Structure
+
+```
+eroticreviews-eu/
+├── apps/
+│   ├── eu/           ✅ Next.js 15 + i18n middleware
+│   ├── cz/           🔜 Next.js 15 (cs-CZ)
+│   ├── de/           🔜 Next.js 15 (de-DE)
+│   ├── es/           🔜 Next.js 15 (es-ES)
+│   ├── fr/           🔜 Next.js 15 (fr-FR)
+│   ├── nl/           🔜 Next.js 15 (nl-NL)
+│   └── uk/           🔜 Next.js 15 (en-GB)
+│
+├── packages/
+│   ├── schema/       ✅ SEO utilities
+│   │   ├── src/
+│   │   │   ├── slug.ts           (Per-locale slug generation)
+│   │   │   ├── head-tags.ts      (Canonical, hreflang, robots, OG)
+│   │   │   └── index.ts
+│   │   └── data/
+│   │       ├── countries.json    (2 countries in 6 languages)
+│   │       ├── cities.json       (3 cities in 6 languages)
+│   │       ├── categories.json   (3 categories in 6 languages)
+│   │       └── profiles.json     (6 profiles in 6 languages)
+│   │
+│   ├── ui/           🔜 Shared UI components (Tailwind + shadcn/ui)
+│   └── api/          🔜 Headless CMS SDK client
+│
+└── package.json      (npm workspaces)
 ```
 
-## What's inside?
+## ✅ Implemented Features
 
-This Turborepo includes the following packages/apps:
+### 1. Monorepo Setup
+- npm workspaces
+- Shared packages architecture
+- TypeScript strict mode
 
-### Apps and Packages
+### 2. @eroticreviews/schema Package
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+**Slug Generation** (`slug.ts`)
+- Per-locale transliteration (CS, DE, ES, FR, NL, EN)
+- SEO-safe formatting ([a-z0-9-])
+- Stop words removal (optional)
+- Banned words/prefixes filter
+- GlobalIDshort generation (base36)
+- Profile URL building: `/slug-globalIDshort`
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+**HeadTagBuilder** (`head-tags.ts`)
+- Canonical URL logic
+  - ccTLD: always self
+  - .eu/en: always self
+  - .eu/{lang}: canonical → ccTLD if exists, else self
+- Hreflang symmetric groups
+  - Always: .eu/en (en + x-default)
+  - All existing ccTLD equivalents
+  - .eu/{lang} only if ccTLD doesn't exist
+- Robots meta
+  - ccTLD: always index,follow
+  - .eu/en: always index,follow
+  - .eu/{lang}: noindex,follow if ccTLD exists
+- Open Graph + Twitter Cards (i18n)
 
-### Utilities
+**Seed Data** (6 languages: en, cs, de, es, fr, nl)
+- 2 countries (Czech Republic, Germany)
+- 3 cities (Prague, Brno, Berlin)
+- 3 categories (Escorts, Massage, BDSM)
+- 6 multilingual profiles with:
+  - globalID (unique across domains)
+  - slug_current (per locale)
+  - title & description (6 languages)
+  - offers (per ccTLD - CZK/EUR)
+  - visibility (per domain)
+  - verification status
 
-This Turborepo has some additional tools already setup for you:
+### 3. /apps/eu (eroticreviews.eu)
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+**Tech Stack**
+- Next.js 15 with App Router + Turbopack
+- TypeScript strict mode
+- Tailwind CSS
+- @eroticreviews/schema integration
+
+**i18n Middleware** (`middleware.ts`)
+- URL routing:
+  - `/` = EN (default, no prefix)
+  - `/{lang}/*` = CS, DE, ES, FR, NL, EN-GB
+- Locale detection from pathname
+- Headers injection (x-locale, x-is-lang-path)
+
+**Pages**
+- ✅ Homepage (multilingual)
+  - Browse by City
+  - Browse by Category
+  - Fully localized UI
+- 🔜 /city/[slug] (city detail page)
+- 🔜 /profile/[slug] (profile page with Schema.org)
+
+**Locale-first SEO**
+- Every URL has one language
+- All content (UI, categories, descriptions) fully localized
+- No language mixing on single page
+
+## 🚀 Running the Project
+
+### Install Dependencies
+
+```bash
+# Root (install all workspaces)
+npm install
+
+# Or individual workspace
+cd apps/eu && npm install
+```
+
+### Development
+
+```bash
+# Run EU app
+npm run dev:eu
+
+# Or from apps/eu
+cd apps/eu && npm run dev
+```
 
 ### Build
 
-To build all apps and packages, run the following command:
+```bash
+# Build all apps
+npm run build
 
-```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build
-yarn dlx turbo build
-pnpm exec turbo build
+# Build EU app only
+npm run build:eu
 ```
 
-You can build a specific package by using a [filter](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters):
+## 📋 Next Steps
 
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build --filter=docs
+1. ✅ Monorepo structure
+2. ✅ /packages/schema (slug + head-tags + seed data)
+3. ✅ /apps/eu basic setup + i18n middleware
+4. 🔜 /apps/cz (Czech ccTLD)
+5. 🔜 City detail page (/city/[slug])
+6. 🔜 Profile detail page (/profile/[slug])
+7. 🔜 Language/Region switcher component
+8. 🔜 Tests (slug transliteration, head-tags)
+9. 🔜 Other ccTLD apps (DE, ES, FR, NL, UK)
+10. 🔜 /packages/ui (shared components)
+11. 🔜 /packages/api (headless CMS client)
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build --filter=docs
-yarn exec turbo build --filter=docs
-pnpm exec turbo build --filter=docs
-```
+## 📖 Specification
 
-### Develop
+Based on **ER 4.0 - Complete Specification** (WebovaArchitektura.pdf)
+- Multi-domain architecture (1 EU + 6 ccTLD)
+- Multi-locale content (6 languages)
+- Locale-first SEO approach
+- Hreflang management
+- Slug rules per locale
+- Username & Identity system
+- Monetization (FREE/PREMIUM/ELITE)
+- Review moderation system
 
-To develop all apps and packages, run the following command:
+## 🔗 Key Concepts
 
-```
-cd my-turborepo
+### Locale-first SEO
+- Each URL = one language
+- Zero language mixing
+- Per-locale categories, tags, slugs
+- Maximize KW coverage per language/region
 
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev
+### GlobalID System
+- Profile.globalID = immutable across domains
+- Deduplication across ccTLDs
+- LocalizedSlugs can differ per language
+- URL format: `/profile/{slug}-{globalIDshort}`
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev
-yarn exec turbo dev
-pnpm exec turbo dev
-```
+### Hreflang Groups (Symmetric)
+Always includes:
+1. .eu/en (hreflang="en" + "x-default")
+2. All existing ccTLD URLs
+3. .eu/{lang} only when ccTLD doesn't exist
 
-You can develop a specific package by using a [filter](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters):
+### Visibility Control
+Per entity (Country/City/Category/Profile):
+- visibility_eu, visibility_cz, visibility_de, etc.
+- Controls which domain shows which content
+- Flexible multi-market strategy
 
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev --filter=web
+## 📚 Documentation
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev --filter=web
-yarn exec turbo dev --filter=web
-pnpm exec turbo dev --filter=web
-```
+- `/packages/schema/README.md` - Schema package docs
+- `WebovaArchitektura.pdf` - Full ER 4.0 spec
 
-### Remote Caching
+## 📝 License
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
-
-Turborepo can use a technique known as [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
-
-```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo login
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo login
-yarn exec turbo login
-pnpm exec turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo link
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo link
-yarn exec turbo link
-pnpm exec turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turborepo.com/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.com/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.com/docs/reference/configuration)
-- [CLI Usage](https://turborepo.com/docs/reference/command-line-reference)
+Private - EroticReviews.EU © 2025

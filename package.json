@@ -1,24 +1,30 @@
 {
   "name": "eroticreviews-eu",
+  "version": "4.0.0",
   "private": true,
-  "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "check-types": "turbo run check-types"
-  },
-  "devDependencies": {
-    "prettier": "^3.6.2",
-    "turbo": "^2.5.8",
-    "typescript": "5.9.2"
-  },
-  "engines": {
-    "node": ">=18"
-  },
-  "packageManager": "npm@10.9.3",
+  "description": "EroticReviews.EU - Multi-domain, multi-locale adult services directory",
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspaces --if-present",
+    "dev:eu": "npm run dev --workspace=apps/eu",
+    "dev:cz": "npm run dev --workspace=apps/cz",
+    "build": "npm run build --workspaces --if-present",
+    "build:eu": "npm run build --workspace=apps/eu",
+    "build:cz": "npm run build --workspace=apps/cz",
+    "lint": "npm run lint --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "clean": "rm -rf node_modules apps/*/node_modules apps/*/.next packages/*/node_modules packages/*/dist"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0",
+    "eslint": "^8.57.0"
+  },
+  "engines": {
+    "node": ">=18.17.0",
+    "npm": ">=9.0.0"
+  }
 }

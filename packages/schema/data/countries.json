@@ -1,0 +1,62 @@
+{
+  "countries": [
+    {
+      "id": "cz",
+      "iso2": "CZ",
+      "name": {
+        "en": "Czech Republic",
+        "cs": "Česká republika",
+        "de": "Tschechien",
+        "es": "República Checa",
+        "fr": "République tchèque",
+        "nl": "Tsjechië"
+      },
+      "slug": {
+        "en": "czech-republic",
+        "cs": "ceska-republika",
+        "de": "tschechien",
+        "es": "republica-checa",
+        "fr": "republique-tcheque",
+        "nl": "tjechie"
+      },
+      "visibility": {
+        "eu": true,
+        "cz": true,
+        "de": true,
+        "es": true,
+        "fr": true,
+        "nl": true,
+        "uk": true
+      }
+    },
+    {
+      "id": "de",
+      "iso2": "DE",
+      "name": {
+        "en": "Germany",
+        "cs": "Německo",
+        "de": "Deutschland",
+        "es": "Alemania",
+        "fr": "Allemagne",
+        "nl": "Duitsland"
+      },
+      "slug": {
+        "en": "germany",
+        "cs": "nemecko",
+        "de": "deutschland",
+        "es": "alemania",
+        "fr": "allemagne",
+        "nl": "duitsland"
+      },
+      "visibility": {
+        "eu": true,
+        "cz": true,
+        "de": true,
+        "es": true,
+        "fr": true,
+        "nl": true,
+        "uk": true
+      }
+    }
+  ]
+}

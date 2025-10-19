@@ -1,0 +1,103 @@
+{
+  "cities": [
+    {
+      "id": "prague",
+      "country_id": "cz",
+      "name": {
+        "en": "Prague",
+        "cs": "Praha",
+        "de": "Prag",
+        "es": "Praga",
+        "fr": "Prague",
+        "nl": "Praag"
+      },
+      "slug": {
+        "en": "prague",
+        "cs": "praha",
+        "de": "prag",
+        "es": "praga",
+        "fr": "prague",
+        "nl": "praag"
+      },
+      "coords": {
+        "lat": 50.0755,
+        "lng": 14.4378
+      },
+      "visibility": {
+        "eu": true,
+        "cz": true,
+        "de": true,
+        "es": true,
+        "fr": true,
+        "nl": true,
+        "uk": true
+      }
+    },
+    {
+      "id": "brno",
+      "country_id": "cz",
+      "name": {
+        "en": "Brno",
+        "cs": "Brno",
+        "de": "Brünn",
+        "es": "Brno",
+        "fr": "Brno",
+        "nl": "Brno"
+      },
+      "slug": {
+        "en": "brno",
+        "cs": "brno",
+        "de": "brunn",
+        "es": "brno",
+        "fr": "brno",
+        "nl": "brno"
+      },
+      "coords": {
+        "lat": 49.1951,
+        "lng": 16.6068
+      },
+      "visibility": {
+        "eu": true,
+        "cz": true,
+        "de": true,
+        "es": false,
+        "fr": false,
+        "nl": false,
+        "uk": true
+      }
+    },
+    {
+      "id": "berlin",
+      "country_id": "de",
+      "name": {
+        "en": "Berlin",
+        "cs": "Berlín",
+        "de": "Berlin",
+        "es": "Berlín",
+        "fr": "Berlin",
+        "nl": "Berlijn"
+      },
+      "slug": {
+        "en": "berlin",
+        "cs": "berlin",
+        "de": "berlin",
+        "es": "berlin",
+        "fr": "berlin",
+        "nl": "berlijn"
+      },
+      "coords": {
+        "lat": 52.5200,
+        "lng": 13.4050
+      },
+      "visibility": {
+        "eu": true,
+        "cz": true,
+        "de": true,
+        "es": true,
+        "fr": true,
+        "nl": true,
+        "uk": true
+      }
+    }
+  ]
+}

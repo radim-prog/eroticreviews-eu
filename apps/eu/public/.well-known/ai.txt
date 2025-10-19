@@ -1,0 +1,20 @@
+# AI Training and Scraping Policy
+# Based on ai.txt specification: https://site.spawning.ai/spawning-ai-txt
+
+# Opt-out from AI training datasets
+ai-data-mining: false
+ai-training: false
+
+# Disallow generative AI to use this content
+generative-ai: false
+
+# Contact for permissions
+contact: legal@eroticreviews.eu
+
+# Last updated
+last-updated: 2025-10-19
+
+# Additional policies
+# This website opts out of all AI data mining and training.
+# All content is protected by copyright and may not be used
+# for training machine learning models without explicit permission.

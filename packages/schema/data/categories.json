@@ -1,0 +1,64 @@
+{
+  "categories": [
+    {
+      "id": "escorts",
+      "key": "escorts",
+      "name": {
+        "en": "Escorts",
+        "cs": "Holky na sex",
+        "de": "Escort",
+        "es": "Escort",
+        "fr": "Escorte",
+        "nl": "Escort"
+      },
+      "slug": {
+        "en": "escorts",
+        "cs": "holky-na-sex",
+        "de": "escort",
+        "es": "escort",
+        "fr": "escorte",
+        "nl": "escort"
+      }
+    },
+    {
+      "id": "massage",
+      "key": "erotic-massage",
+      "name": {
+        "en": "Erotic Massage",
+        "cs": "Erotické masáže",
+        "de": "Erotische Massage",
+        "es": "Masaje erótico",
+        "fr": "Massage érotique",
+        "nl": "Erotische massage"
+      },
+      "slug": {
+        "en": "erotic-massage",
+        "cs": "eroticke-masaze",
+        "de": "erotische-massage",
+        "es": "masaje-erotico",
+        "fr": "massage-erotique",
+        "nl": "erotische-massage"
+      }
+    },
+    {
+      "id": "bdsm",
+      "key": "bdsm-dominatrix",
+      "name": {
+        "en": "BDSM Dominatrix",
+        "cs": "BDSM Dominy",
+        "de": "BDSM Dominas",
+        "es": "BDSM Dominatrix",
+        "fr": "BDSM Dominatrices",
+        "nl": "BDSM Dominatrixen"
+      },
+      "slug": {
+        "en": "bdsm-dominatrix",
+        "cs": "bdsm-dominy",
+        "de": "bdsm-dominas",
+        "es": "bdsm-dominatrix",
+        "fr": "bdsm-dominatrices",
+        "nl": "bdsm-dominatrixen"
+      }
+    }
+  ]
+}

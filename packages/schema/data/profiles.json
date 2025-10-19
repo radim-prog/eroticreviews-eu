@@ -1,0 +1,386 @@
+{
+  "profiles": [
+    {
+      "globalID": "profile-karolina-001",
+      "country_id": "cz",
+      "city_id": "prague",
+      "category_ids": ["escorts"],
+      "slug_current": {
+        "en": "karolina-luxury-escort-prague",
+        "cs": "karolina-luxusni-escort-praha",
+        "de": "karolina-luxus-escort-prag",
+        "es": "karolina-escort-lujo-praga",
+        "fr": "karolina-escorte-luxe-prague",
+        "nl": "karolina-luxe-escort-praag"
+      },
+      "slug_history": {},
+      "title": {
+        "en": "Karolína - Luxury Escort Prague",
+        "cs": "Karolína - Luxusní Escort Praha",
+        "de": "Karolína - Luxus Escort Prag",
+        "es": "Karolína - Escort de Lujo Praga",
+        "fr": "Karolína - Escorte de Luxe Prague",
+        "nl": "Karolína - Luxe Escort Praag"
+      },
+      "description": {
+        "en": "Elegant blonde companion offering GFE experience in Prague. University educated, speaks multiple languages. Available for incall and outcall services.",
+        "cs": "Elegantní blondýnka nabízející GFE zkušenost v Praze. Vysokoškolsky vzdělaná, mluví více jazyky. Dostupná pro incall i outcall.",
+        "de": "Elegante blonde Begleiterin bietet GFE-Erlebnis in Prag. Hochschulausbildung, spricht mehrere Sprachen. Verfügbar für Incall und Outcall.",
+        "es": "Elegante acompañante rubia que ofrece experiencia GFE en Praga. Educación universitaria, habla varios idiomas. Disponible para servicios incall y outcall.",
+        "fr": "Élégante compagne blonde offrant une expérience GFE à Prague. Diplômée universitaire, parle plusieurs langues. Disponible pour incall et outcall.",
+        "nl": "Elegante blonde gezelschapsdame biedt GFE-ervaring in Praag. Universitair opgeleid, spreekt meerdere talen. Beschikbaar voor incall en outcall."
+      },
+      "media": [],
+      "attributes": {
+        "age": 24,
+        "height_cm": 168,
+        "weight_kg": 52,
+        "breast": "C",
+        "eyes": "blue",
+        "hair": "blonde"
+      },
+      "offers": {
+        "cz": {
+          "pricing_note": "Od 3000 Kč/hod",
+          "currency": "CZK"
+        },
+        "eu": {
+          "pricing_note": "From €120/hour",
+          "currency": "EUR"
+        },
+        "de": {
+          "pricing_note": "Ab €120/Stunde",
+          "currency": "EUR"
+        }
+      },
+      "verification": {
+        "status": "verified",
+        "date": "2025-10-01"
+      },
+      "visibility": {
+        "eu": true,
+        "cz": true,
+        "de": true,
+        "es": false,
+        "fr": false,
+        "nl": false,
+        "uk": true
+      }
+    },
+    {
+      "globalID": "profile-laura-002",
+      "country_id": "cz",
+      "city_id": "brno",
+      "category_ids": ["massage"],
+      "slug_current": {
+        "en": "laura-erotic-massage-brno",
+        "cs": "laura-eroticka-masaz-brno",
+        "de": "laura-erotische-massage-brunn",
+        "es": "laura-masaje-erotico-brno",
+        "fr": "laura-massage-erotique-brno",
+        "nl": "laura-erotische-massage-brno"
+      },
+      "slug_history": {},
+      "title": {
+        "en": "Laura - Erotic Massage Brno",
+        "cs": "Laura - Erotická masáž Brno",
+        "de": "Laura - Erotische Massage Brünn",
+        "es": "Laura - Masaje Erótico Brno",
+        "fr": "Laura - Massage Érotique Brno",
+        "nl": "Laura - Erotische Massage Brno"
+      },
+      "description": {
+        "en": "Professional masseuse specializing in tantric and relaxation techniques. Private studio in Brno city center. Incall only.",
+        "cs": "Profesionální masérka specializující se na tantrické a relaxační techniky. Soukromé studio v centru Brna. Pouze incall.",
+        "de": "Professionelle Masseuse, spezialisiert auf tantrische und Entspannungstechniken. Privates Studio im Zentrum von Brünn. Nur Incall.",
+        "es": "Masajista profesional especializada en técnicas tántricas y de relajación. Estudio privado en el centro de Brno. Solo incall.",
+        "fr": "Masseuse professionnelle spécialisée dans les techniques tantriques et de relaxation. Studio privé au centre de Brno. Incall uniquement.",
+        "nl": "Professionele masseuse gespecialiseerd in tantrische en ontspanningstechnieken. Privé studio in het centrum van Brno. Alleen incall."
+      },
+      "media": [],
+      "attributes": {
+        "age": 28,
+        "height_cm": 172,
+        "weight_kg": 58,
+        "breast": "B",
+        "eyes": "green",
+        "hair": "brunette"
+      },
+      "offers": {
+        "cz": {
+          "pricing_note": "2000 Kč/60 min",
+          "currency": "CZK"
+        },
+        "eu": {
+          "pricing_note": "€80/60 min",
+          "currency": "EUR"
+        }
+      },
+      "verification": {
+        "status": "verified",
+        "date": "2025-09-15"
+      },
+      "visibility": {
+        "eu": true,
+        "cz": true,
+        "de": false,
+        "es": false,
+        "fr": false,
+        "nl": false,
+        "uk": false
+      }
+    },
+    {
+      "globalID": "profile-anna-003",
+      "country_id": "de",
+      "city_id": "berlin",
+      "category_ids": ["escorts"],
+      "slug_current": {
+        "en": "anna-berlin-escort",
+        "cs": "anna-berlinska-escort",
+        "de": "anna-berlin-escort",
+        "es": "anna-escort-berlin",
+        "fr": "anna-escorte-berlin",
+        "nl": "anna-berlijn-escort"
+      },
+      "slug_history": {},
+      "title": {
+        "en": "Anna - Berlin Escort",
+        "cs": "Anna - Berlínská Escort",
+        "de": "Anna - Berlin Escort",
+        "es": "Anna - Escort Berlín",
+        "fr": "Anna - Escorte Berlin",
+        "nl": "Anna - Berlijn Escort"
+      },
+      "description": {
+        "en": "Sophisticated escort in Berlin. Perfect for business dinners and private meetings. Multilingual and well-educated.",
+        "cs": "Sofistikovaná escort v Berlíně. Perfektní pro obchodní večeře a soukromá setkání. Vícejazyčná a vzdělaná.",
+        "de": "Anspruchsvolle Escort in Berlin. Perfekt für Geschäftsessen und private Treffen. Mehrsprachig und gebildet.",
+        "es": "Escort sofisticada en Berlín. Perfecta para cenas de negocios y reuniones privadas. Multilingüe y bien educada.",
+        "fr": "Escorte sophistiquée à Berlin. Parfaite pour les dîners d'affaires et les rencontres privées. Multilingue et bien éduquée.",
+        "nl": "Verfijnde escort in Berlijn. Perfect voor zakelijke diners en privé-ontmoetingen. Meertalig en goed opgeleid."
+      },
+      "media": [],
+      "attributes": {
+        "age": 26,
+        "height_cm": 175,
+        "weight_kg": 60,
+        "breast": "C",
+        "eyes": "brown",
+        "hair": "brunette"
+      },
+      "offers": {
+        "de": {
+          "pricing_note": "€200/Stunde",
+          "currency": "EUR"
+        },
+        "eu": {
+          "pricing_note": "€200/hour",
+          "currency": "EUR"
+        }
+      },
+      "verification": {
+        "status": "verified",
+        "date": "2025-10-10"
+      },
+      "visibility": {
+        "eu": true,
+        "cz": true,
+        "de": true,
+        "es": true,
+        "fr": true,
+        "nl": true,
+        "uk": true
+      }
+    },
+    {
+      "globalID": "profile-marketa-004",
+      "country_id": "cz",
+      "city_id": "prague",
+      "category_ids": ["bdsm"],
+      "slug_current": {
+        "en": "marketa-bdsm-dominatrix-prague",
+        "cs": "marketa-bdsm-domina-praha",
+        "de": "marketa-bdsm-domina-prag",
+        "es": "marketa-bdsm-dominatrix-praga",
+        "fr": "marketa-bdsm-dominatrice-prague",
+        "nl": "marketa-bdsm-dominatrix-praag"
+      },
+      "slug_history": {},
+      "title": {
+        "en": "Markéta - BDSM Dominatrix Prague",
+        "cs": "Markéta - BDSM Domina Praha",
+        "de": "Markéta - BDSM Domina Prag",
+        "es": "Markéta - BDSM Dominatrix Praga",
+        "fr": "Markéta - BDSM Dominatrice Prague",
+        "nl": "Markéta - BDSM Dominatrix Praag"
+      },
+      "description": {
+        "en": "Experienced dominatrix with fully equipped dungeon in Prague. Specializing in role play, bondage, and discipline. Serious inquiries only.",
+        "cs": "Zkušená domina s plně vybaveným dungeonem v Praze. Specializace na role play, bondage a disciplínu. Pouze vážné zájemce.",
+        "de": "Erfahrene Domina mit voll ausgestattetem Dungeon in Prag. Spezialisiert auf Rollenspiele, Bondage und Disziplin. Nur ernsthafte Anfragen.",
+        "es": "Dominatriz experimentada con mazmorra completamente equipada en Praga. Especializada en juegos de rol, bondage y disciplina. Solo consultas serias.",
+        "fr": "Dominatrice expérimentée avec donjon entièrement équipé à Prague. Spécialisée dans les jeux de rôle, le bondage et la discipline. Demandes sérieuses uniquement.",
+        "nl": "Ervaren dominatrix met volledig uitgeruste kerker in Praag. Gespecialiseerd in rollenspel, bondage en discipline. Alleen serieuze aanvragen."
+      },
+      "media": [],
+      "attributes": {
+        "age": 32,
+        "height_cm": 178,
+        "weight_kg": 65,
+        "breast": "B",
+        "eyes": "blue",
+        "hair": "black"
+      },
+      "offers": {
+        "cz": {
+          "pricing_note": "Od 4000 Kč/session",
+          "currency": "CZK"
+        },
+        "eu": {
+          "pricing_note": "From €160/session",
+          "currency": "EUR"
+        }
+      },
+      "verification": {
+        "status": "verified",
+        "date": "2025-09-20"
+      },
+      "visibility": {
+        "eu": true,
+        "cz": true,
+        "de": true,
+        "es": false,
+        "fr": false,
+        "nl": false,
+        "uk": true
+      }
+    },
+    {
+      "globalID": "profile-sofia-005",
+      "country_id": "de",
+      "city_id": "berlin",
+      "category_ids": ["massage"],
+      "slug_current": {
+        "en": "sofia-tantric-massage-berlin",
+        "cs": "sofia-tantricka-masaz-berlin",
+        "de": "sofia-tantra-massage-berlin",
+        "es": "sofia-masaje-tantrico-berlin",
+        "fr": "sofia-massage-tantrique-berlin",
+        "nl": "sofia-tantra-massage-berlijn"
+      },
+      "slug_history": {},
+      "title": {
+        "en": "Sofia - Tantric Massage Berlin",
+        "cs": "Sofia - Tantrická masáž Berlín",
+        "de": "Sofia - Tantra Massage Berlin",
+        "es": "Sofia - Masaje Tántrico Berlín",
+        "fr": "Sofia - Massage Tantrique Berlin",
+        "nl": "Sofia - Tantra Massage Berlijn"
+      },
+      "description": {
+        "en": "Certified tantric massage therapist in Berlin. Offering authentic tantric experience in peaceful studio environment.",
+        "cs": "Certifikovaná terapeutka tantrických masáží v Berlíně. Nabízím autentickou tantrickou zkušenost v klidném studiu.",
+        "de": "Zertifizierte Tantra-Massage-Therapeutin in Berlin. Authentisches Tantra-Erlebnis in ruhiger Studio-Umgebung.",
+        "es": "Terapeuta certificada de masaje tántrico en Berlín. Ofreciendo experiencia tántrica auténtica en un ambiente de estudio tranquilo.",
+        "fr": "Thérapeute certifiée en massage tantrique à Berlin. Offrant une expérience tantrique authentique dans un studio paisible.",
+        "nl": "Gecertificeerde tantra massage therapeut in Berlijn. Authentieke tantra-ervaring in een vredige studio-omgeving."
+      },
+      "media": [],
+      "attributes": {
+        "age": 30,
+        "height_cm": 165,
+        "weight_kg": 55,
+        "breast": "B",
+        "eyes": "brown",
+        "hair": "brunette"
+      },
+      "offers": {
+        "de": {
+          "pricing_note": "€120/90 min",
+          "currency": "EUR"
+        },
+        "eu": {
+          "pricing_note": "€120/90 min",
+          "currency": "EUR"
+        }
+      },
+      "verification": {
+        "status": "verified",
+        "date": "2025-10-05"
+      },
+      "visibility": {
+        "eu": true,
+        "cz": false,
+        "de": true,
+        "es": false,
+        "fr": false,
+        "nl": false,
+        "uk": false
+      }
+    },
+    {
+      "globalID": "profile-petra-006",
+      "country_id": "cz",
+      "city_id": "prague",
+      "category_ids": ["escorts", "massage"],
+      "slug_current": {
+        "en": "petra-escort-massage-prague",
+        "cs": "petra-escort-masaz-praha",
+        "de": "petra-escort-massage-prag",
+        "es": "petra-escort-masaje-praga",
+        "fr": "petra-escorte-massage-prague",
+        "nl": "petra-escort-massage-praag"
+      },
+      "slug_history": {},
+      "title": {
+        "en": "Petra - Escort & Massage Prague",
+        "cs": "Petra - Escort & Masáž Praha",
+        "de": "Petra - Escort & Massage Prag",
+        "es": "Petra - Escort & Masaje Praga",
+        "fr": "Petra - Escorte & Massage Prague",
+        "nl": "Petra - Escort & Massage Praag"
+      },
+      "description": {
+        "en": "Versatile companion offering both escort and massage services in Prague. Warm personality, professional approach. Available 24/7.",
+        "cs": "Všestranná společnice nabízející escort i masážní služby v Praze. Vřelá osobnost, profesionální přístup. Dostupná 24/7.",
+        "de": "Vielseitige Begleiterin, die sowohl Escort- als auch Massage-Dienstleistungen in Prag anbietet. Warme Persönlichkeit, professioneller Ansatz. 24/7 verfügbar.",
+        "es": "Acompañante versátil que ofrece servicios de escort y masaje en Praga. Personalidad cálida, enfoque profesional. Disponible 24/7.",
+        "fr": "Compagne polyvalente offrant des services d'escorte et de massage à Prague. Personnalité chaleureuse, approche professionnelle. Disponible 24/7.",
+        "nl": "Veelzijdige gezelschapsdame die zowel escort- als massagediensten aanbiedt in Praag. Warme persoonlijkheid, professionele aanpak. 24/7 beschikbaar."
+      },
+      "media": [],
+      "attributes": {
+        "age": 27,
+        "height_cm": 170,
+        "weight_kg": 56,
+        "breast": "C",
+        "eyes": "green",
+        "hair": "blonde"
+      },
+      "offers": {
+        "cz": {
+          "pricing_note": "Od 2500 Kč/hod",
+          "currency": "CZK"
+        },
+        "eu": {
+          "pricing_note": "From €100/hour",
+          "currency": "EUR"
+        }
+      },
+      "verification": {
+        "status": "verified",
+        "date": "2025-10-12"
+      },
+      "visibility": {
+        "eu": true,
+        "cz": true,
+        "de": true,
+        "es": true,
+        "fr": true,
+        "nl": true,
+        "uk": true
+      }
+    }
+  ]
+}
