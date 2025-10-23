@@ -1,7 +1,7 @@
 /**
  * Head Tag Builder for ER 4.0
  * Based on specification Chapter 14
- * 
+ *
  * Generates:
  * - Canonical URLs
  * - Hreflang tags (symmetric groups)
@@ -9,8 +9,10 @@
  * - OG/Twitter meta tags
  */
 
+import type { Locale } from './slug';
+
 export type Domain = 'eu' | 'cz' | 'de' | 'es' | 'fr' | 'nl' | 'uk';
-export type Locale = 'en' | 'cs-CZ' | 'de-DE' | 'es-ES' | 'fr-FR' | 'nl-NL' | 'en-GB';
+export type { Locale };
 
 export interface HrefLangEquivalent {
   locale: Locale;
