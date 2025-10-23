@@ -3,6 +3,17 @@ import { adminAuth } from '@/lib/firebase-admin';
 import { cookies } from 'next/headers';
 
 async function verifyAdmin() {
+  // 🚧 TEMPORARY: Auth disabled for development/demo
+  // TODO: Re-enable Firebase auth before production
+
+  // Return fake admin user for demo
+  return {
+    uid: 'demo-admin-123',
+    email: 'demo@admin.com',
+    displayName: 'Demo Admin'
+  };
+
+  /* ORIGINAL CODE - COMMENTED OUT FOR DEMO:
   const cookieStore = await cookies();
   const sessionCookie = cookieStore.get('session');
 
@@ -25,6 +36,7 @@ async function verifyAdmin() {
     console.error('Admin verification error:', error);
     return null;
   }
+  */
 }
 
 export default async function AdminLayout({
