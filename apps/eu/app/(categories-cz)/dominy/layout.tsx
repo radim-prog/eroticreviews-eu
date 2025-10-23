@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { generateCategoryMeta } from "@/lib/seo/meta-tags";
-import { getPeopleByType } from "@/lib/demo-data";
+import { getPeopleByType } from "@/lib-cz/demo-data";
 
 const people = getPeopleByType("domina");
 

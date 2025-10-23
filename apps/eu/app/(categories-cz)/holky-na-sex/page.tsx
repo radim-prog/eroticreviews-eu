@@ -4,8 +4,8 @@ import { useState, useMemo } from "react";
 import Link from "next/link";
 import { MapPin, Star, TrendingUp } from "lucide-react";
 import StarRating from "@/components/StarRating";
-import { getPeopleByType } from "@/lib/demo-data";
-import { LOCATIONS } from "@/lib/types";
+import { getPeopleByType } from "@/lib-cz/demo-data";
+import { LOCATIONS } from "@/lib-cz/types";
 
 export default function HolkyNaSexPage() {
   const allPeople = getPeopleByType("divka");

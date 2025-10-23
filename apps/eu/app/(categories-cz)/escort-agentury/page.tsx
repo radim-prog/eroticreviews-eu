@@ -1,5 +1,5 @@
 import CategoryPage from "@/components/CategoryPage";
-import { getOrganizationsByType } from "@/lib/demo-data";
+import { getOrganizationsByType } from "@/lib-cz/demo-data";
 
 export const metadata = {
   title: "Escort agentury | Ověřené recenze | EroticReviews.cz",

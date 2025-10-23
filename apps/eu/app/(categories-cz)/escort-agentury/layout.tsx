@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { generateCategoryMeta } from "@/lib/seo/meta-tags";
-import { getOrganizationsByType } from "@/lib/demo-data";
+import { getOrganizationsByType } from "@/lib-cz/demo-data";
 
 const agencies = getOrganizationsByType("escort_agentura");
 

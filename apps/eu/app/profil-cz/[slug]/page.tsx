@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { MapPin, CheckCircle, Star } from "lucide-react";
 import StarRating from "@/components/StarRating";
-import { getPersonBySlug, getReviewsByTargetId } from "@/lib/demo-data";
+import { getPersonBySlug, getReviewsByTargetId } from "@/lib-cz/demo-data";
 import { notFound } from "next/navigation";
 import { generatePersonSchema } from "@/lib/seo/schema-person";
 import { generatePersonMeta } from "@/lib/seo/meta-tags";

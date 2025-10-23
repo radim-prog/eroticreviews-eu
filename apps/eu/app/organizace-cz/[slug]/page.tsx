@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { MapPin, Phone, Globe, Mail, CheckCircle, Star, Building } from "lucide-react";
 import StarRating from "@/components/StarRating";
-import { getOrganizationBySlug, getReviewsByTargetId, getPersonBySlug } from "@/lib/demo-data";
+import { getOrganizationBySlug, getReviewsByTargetId, getPersonBySlug } from "@/lib-cz/demo-data";
 import { notFound } from "next/navigation";
 import { generateBusinessSchema } from "@/lib/seo/schema-business";
 import { generateOrganizationSchema } from "@/lib/seo/schema-organization";

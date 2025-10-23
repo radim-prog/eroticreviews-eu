@@ -4,7 +4,7 @@ import { useState, useMemo } from "react";
 import Link from "next/link";
 import { MapPin, Star, Monitor } from "lucide-react";
 import StarRating from "@/components/StarRating";
-import { getPeopleByType } from "@/lib/demo-data";
+import { getPeopleByType } from "@/lib-cz/demo-data";
 
 export default function DigitalniModelkyPage() {
   const allPeople = getPeopleByType("digitalmodelka");

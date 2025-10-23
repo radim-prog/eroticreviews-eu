@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { getLocale } from "@/lib/locale";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import AgeVerification from "@/components/AgeVerification";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
-  
+
   // Basic metadata - will be enhanced per page
   const titles: Record<string, string> = {
     'en': 'EroticReviews.EU - European Adult Services Directory',
@@ -15,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
     'nl': 'EroticReviews.EU - Europese Volwassen Diensten Gids',
     'en-GB': 'EroticReviews.EU - European Adult Services Directory'
   };
-  
+
   const descriptions: Record<string, string> = {
     'en': 'European directory of verified escorts, erotic massage and BDSM services. Browse profiles, read reviews, find companions across Europe.',
     'cs': 'Evropský adresář ověřených eskort služeb, erotických masáží a BDSM. Procházejte profily, čtěte recenze, najděte společnice po celé Evropě.',
@@ -25,7 +31,7 @@ export async function generateMetadata(): Promise<Metadata> {
     'nl': 'Europese gids van geverifieerde escort services, erotische massages en BDSM. Blader door profielen, lees beoordelingen, vind gezelschap in heel Europa.',
     'en-GB': 'European directory of verified escorts, erotic massage and BDSM services. Browse profiles, read reviews, find companions across Europe.'
   };
-  
+
   return {
     title: titles[locale],
     description: descriptions[locale],
@@ -50,11 +56,18 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const locale = await getLocale();
-  
+
   return (
     <html lang={locale}>
-      <body className="antialiased">
-        {children}
+      <body className={`${inter.className} antialiased`}>
+        <AgeVerification />
+        <div className="min-h-screen flex flex-col">
+          <Header />
+          <main className="flex-1">
+            {children}
+          </main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

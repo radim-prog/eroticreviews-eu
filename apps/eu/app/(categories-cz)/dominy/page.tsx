@@ -1,5 +1,5 @@
 import CategoryPage from "@/components/CategoryPage";
-import { getPeopleByType } from "@/lib/demo-data";
+import { getPeopleByType } from "@/lib-cz/demo-data";
 
 export const metadata = {
   title: "Dominy - BDSM a Dominance | EroticReviews.cz",

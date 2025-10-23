@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Search, Star, TrendingUp, Users } from "lucide-react";
-import { PERSON_TYPES, ORG_TYPES } from "@/lib/types";
+import { PERSON_TYPES, ORG_TYPES } from "@/lib-cz/types";
 
 export default function Home() {
   return (

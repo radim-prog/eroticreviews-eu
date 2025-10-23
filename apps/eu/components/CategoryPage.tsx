@@ -4,7 +4,7 @@ import { useState, useMemo } from "react";
 import Link from "next/link";
 import { MapPin, Star, TrendingUp, Filter } from "lucide-react";
 import StarRating from "./StarRating";
-import type { Person, Organization } from "@/lib/types";
+import type { Person, Organization } from "@/lib-cz/types";
 
 interface CategoryPageProps {
   items: Person[] | Organization[];

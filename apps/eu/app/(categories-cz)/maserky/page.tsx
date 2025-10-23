@@ -1,7 +1,7 @@
 "use client";
 
 import CategoryPage from "@/components/CategoryPage";
-import { getPeopleByType } from "@/lib/demo-data";
+import { getPeopleByType } from "@/lib-cz/demo-data";
 
 export default function MaserkyPage() {
   const maserky = getPeopleByType("maserka");
