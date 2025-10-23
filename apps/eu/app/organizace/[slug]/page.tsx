@@ -4,9 +4,9 @@ import { MapPin, Phone, Globe, Mail, CheckCircle, Star, Building } from "lucide-
 import StarRating from "@/components/StarRating";
 import { getOrganizationBySlug, getReviewsByTargetId, getPersonBySlug } from "@/lib-cz/demo-data";
 import { notFound } from "next/navigation";
-import { generateBusinessSchema } from "@/lib/seo/schema-business";
-import { generateOrganizationSchema } from "@/lib/seo/schema-organization";
-import { generateOrganizationMeta } from "@/lib/seo/meta-tags";
+import { generateBusinessSchema } from "@/lib-cz/seo/schema-business";
+import { generateOrganizationSchema } from "@/lib-cz/seo/schema-organization";
+import { generateOrganizationMeta } from "@/lib-cz/seo/meta-tags";
 
 interface PageProps {
   params: Promise<{

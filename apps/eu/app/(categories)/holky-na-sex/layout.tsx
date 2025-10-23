@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { generateCategoryMeta } from "@/lib/seo/meta-tags";
+import { generateCategoryMeta } from "@/lib-cz/seo/meta-tags";
 import { getPeopleByType } from "@/lib-cz/demo-data";
 
 const people = getPeopleByType("divka");

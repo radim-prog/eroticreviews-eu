@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { generateCategoryMeta } from "@/lib/seo/meta-tags";
+import { generateCategoryMeta } from "@/lib-cz/seo/meta-tags";
 import { getOrganizationsByType } from "@/lib-cz/demo-data";
 
 const orgs = getOrganizationsByType("masazni_salon");

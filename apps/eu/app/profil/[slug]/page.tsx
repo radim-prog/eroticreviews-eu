@@ -4,8 +4,8 @@ import { MapPin, CheckCircle, Star } from "lucide-react";
 import StarRating from "@/components/StarRating";
 import { getPersonBySlug, getReviewsByTargetId } from "@/lib-cz/demo-data";
 import { notFound } from "next/navigation";
-import { generatePersonSchema } from "@/lib/seo/schema-person";
-import { generatePersonMeta } from "@/lib/seo/meta-tags";
+import { generatePersonSchema } from "@/lib-cz/seo/schema-person";
+import { generatePersonMeta } from "@/lib-cz/seo/meta-tags";
 
 interface PageProps {
   params: Promise<{
