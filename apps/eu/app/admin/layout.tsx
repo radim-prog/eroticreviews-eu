@@ -1,5 +1,5 @@
 import { redirect } from 'next/navigation';
-import { adminAuth } from '@/lib/firebase-admin';
+// import { adminAuth } from '@/lib/firebase-admin'; // TEMPORARY: Disabled for demo
 import { cookies } from 'next/headers';
 
 async function verifyAdmin() {

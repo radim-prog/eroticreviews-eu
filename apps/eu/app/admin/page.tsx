@@ -1,37 +1,21 @@
-import { adminDb } from '@/lib/firebase-admin';
+import { getAllPeople, getAllOrganizations, getAllReviews } from '@/lib-cz/demo-data';
 
 async function getStats() {
-  try {
-    // Get counts from Firestore
-    const profilesSnapshot = await adminDb.collection('profiles').count().get();
-    const organizationsSnapshot = await adminDb.collection('organizations').count().get();
-    const reviewsSnapshot = await adminDb.collection('reviews').count().get();
-    const usersSnapshot = await adminDb.collection('users').count().get();
+  // 🎯 Using DEMO DATA instead of Firebase for development
+  const allPeople = getAllPeople();
+  const allOrgs = getAllOrganizations();
+  const allReviews = getAllReviews();
 
-    // Get quarantined reviews count
-    const quarantinedReviews = await adminDb
-      .collection('reviews')
-      .where('status', '==', 'quarantine')
-      .count()
-      .get();
+  // Simulate quarantine filter (reviews with rating < 2)
+  const quarantinedReviews = allReviews.filter(r => r.rating < 2);
 
-    return {
-      profiles: profilesSnapshot.data().count,
-      organizations: organizationsSnapshot.data().count,
-      reviews: reviewsSnapshot.data().count,
-      users: usersSnapshot.data().count,
-      quarantinedReviews: quarantinedReviews.data().count,
-    };
-  } catch (error) {
-    console.error('Error fetching stats:', error);
-    return {
-      profiles: 0,
-      organizations: 0,
-      reviews: 0,
-      users: 0,
-      quarantinedReviews: 0,
-    };
-  }
+  return {
+    profiles: allPeople.length,
+    organizations: allOrgs.length,
+    reviews: allReviews.length,
+    users: 127, // Fake count for demo
+    quarantinedReviews: quarantinedReviews.length,
+  };
 }
 
 export default async function AdminDashboard() {

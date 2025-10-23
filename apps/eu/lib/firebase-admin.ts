@@ -3,9 +3,15 @@ import { getAuth } from 'firebase-admin/auth';
 import { getFirestore } from 'firebase-admin/firestore';
 import { getStorage } from 'firebase-admin/storage';
 
-let app: App;
+let app: App | undefined;
 
-if (!getApps().length) {
+// 🚧 TEMPORARY: Only initialize Firebase if env vars are present (for demo mode)
+const hasFirebaseConfig =
+  process.env.FIREBASE_PROJECT_ID &&
+  process.env.FIREBASE_CLIENT_EMAIL &&
+  process.env.FIREBASE_PRIVATE_KEY;
+
+if (hasFirebaseConfig && !getApps().length) {
   app = initializeApp({
     credential: cert({
       projectId: process.env.FIREBASE_PROJECT_ID,
@@ -14,13 +20,14 @@ if (!getApps().length) {
     }),
     storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
   });
-} else {
+} else if (hasFirebaseConfig) {
   app = getApps()[0];
 }
 
-export const adminAuth = getAuth(app);
-export const adminDb = getFirestore(app);
-export const adminStorage = getStorage(app);
+// Export safely - will throw errors if Firebase not configured and these are accessed
+export const adminAuth = app ? getAuth(app) : null as any;
+export const adminDb = app ? getFirestore(app) : null as any;
+export const adminStorage = app ? getStorage(app) : null as any;
 
 // Helper to check if user is admin
 export async function isAdmin(email: string): Promise<boolean> {

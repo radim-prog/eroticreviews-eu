@@ -1,40 +1,50 @@
-import { adminDb } from '@/lib/firebase-admin';
+import { getAllReviews, getAllPeople, getAllOrganizations } from '@/lib-cz/demo-data';
 import Link from 'next/link';
-
-async function getReviews(filter?: string) {
-  try {
-    let query = adminDb
-      .collection('reviews')
-      .orderBy('metadata.created_date', 'desc');
-
-    if (filter === 'quarantine') {
-      query = query.where('status', '==', 'quarantine');
-    } else if (filter === 'published') {
-      query = query.where('status', '==', 'published');
-    }
-
-    const reviewsSnapshot = await query.limit(50).get();
-
-    return reviewsSnapshot.docs.map((doc) => ({
-      id: doc.id,
-      ...doc.data(),
-    }));
-  } catch (error) {
-    console.error('Error fetching reviews:', error);
-    return [];
-  }
-}
 
 interface PageProps {
   searchParams: Promise<{ filter?: string }>;
+}
+
+async function getReviews(filter?: string) {
+  // 🎯 Using DEMO DATA instead of Firebase
+  const allReviews = getAllReviews();
+  const allPeople = getAllPeople();
+  const allOrgs = getAllOrganizations();
+
+  // Combine profiles for lookups
+  const allProfiles = [...allPeople, ...allOrgs];
+
+  // Simulate quarantine (reviews with rating < 2)
+  const reviewsWithProfiles = allReviews.map(review => {
+    const profile = allProfiles.find(p => p.id === review.target_id);
+    const status = review.rating < 2 ? 'quarantine' : 'published';
+    return {
+      ...review,
+      profile,
+      status,
+    };
+  });
+
+  // Apply filter
+  if (filter === 'quarantine') {
+    return reviewsWithProfiles.filter(r => r.status === 'quarantine');
+  } else if (filter === 'published') {
+    return reviewsWithProfiles.filter(r => r.status === 'published');
+  }
+
+  // Sort by newest first
+  return reviewsWithProfiles.sort((a, b) =>
+    b.created_at.getTime() - a.created_at.getTime()
+  );
 }
 
 export default async function AdminReviewsPage({ searchParams }: PageProps) {
   const params = await searchParams;
   const reviews = await getReviews(params.filter);
 
-  const quarantineCount = reviews.filter((r: any) => r.status === 'quarantine')
-    .length;
+  const allReviews = await getReviews();
+  const quarantineCount = allReviews.filter(r => r.status === 'quarantine').length;
+  const publishedCount = allReviews.filter(r => r.status === 'published').length;
 
   return (
     <div>
@@ -43,204 +53,234 @@ export default async function AdminReviewsPage({ searchParams }: PageProps) {
           Recenze ({reviews.length})
         </h2>
         {quarantineCount > 0 && (
-          <div className="bg-red-100 text-red-800 px-4 py-2 rounded-lg">
+          <div className="bg-red-100 text-red-800 px-4 py-2 rounded-lg font-semibold">
             ⚠️ {quarantineCount} v karanténě
           </div>
         )}
       </div>
 
       {/* Filter Tabs */}
-      <div className="mb-6 flex gap-4 border-b">
-        <Link
-          href="/admin/recenze"
-          className={`px-4 py-2 border-b-2 ${
-            !params.filter
-              ? 'border-blue-600 text-blue-600 font-semibold'
-              : 'border-transparent text-gray-600 hover:text-gray-900'
-          }`}
-        >
-          Všechny
-        </Link>
-        <Link
-          href="/admin/recenze?filter=published"
-          className={`px-4 py-2 border-b-2 ${
-            params.filter === 'published'
-              ? 'border-blue-600 text-blue-600 font-semibold'
-              : 'border-transparent text-gray-600 hover:text-gray-900'
-          }`}
-        >
-          Publikované
-        </Link>
-        <Link
-          href="/admin/recenze?filter=quarantine"
-          className={`px-4 py-2 border-b-2 ${
-            params.filter === 'quarantine'
-              ? 'border-red-600 text-red-600 font-semibold'
-              : 'border-transparent text-gray-600 hover:text-gray-900'
-          }`}
-        >
-          Karanténa {quarantineCount > 0 && `(${quarantineCount})`}
-        </Link>
+      <div className="mb-6 bg-white rounded-lg shadow">
+        <div className="flex gap-0 border-b">
+          <Link
+            href="/admin/recenze"
+            className={`px-6 py-3 border-b-2 transition-colors ${
+              !params.filter
+                ? 'border-blue-600 text-blue-600 font-semibold bg-blue-50'
+                : 'border-transparent text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+            }`}
+          >
+            Všechny ({allReviews.length})
+          </Link>
+          <Link
+            href="/admin/recenze?filter=published"
+            className={`px-6 py-3 border-b-2 transition-colors ${
+              params.filter === 'published'
+                ? 'border-green-600 text-green-600 font-semibold bg-green-50'
+                : 'border-transparent text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+            }`}
+          >
+            Publikované ({publishedCount})
+          </Link>
+          <Link
+            href="/admin/recenze?filter=quarantine"
+            className={`px-6 py-3 border-b-2 transition-colors ${
+              params.filter === 'quarantine'
+                ? 'border-red-600 text-red-600 font-semibold bg-red-50'
+                : 'border-transparent text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+            }`}
+          >
+            Karanténa ({quarantineCount})
+          </Link>
+        </div>
       </div>
 
       {/* Reviews List */}
       <div className="space-y-4">
-        {reviews.map((review: any) => (
-          <div
-            key={review.id}
-            className={`bg-white rounded-lg shadow p-6 ${
-              review.status === 'quarantine'
-                ? 'border-l-4 border-red-500'
-                : review.status === 'published'
-                ? 'border-l-4 border-green-500'
-                : 'border-l-4 border-gray-300'
-            }`}
-          >
-            <div className="flex justify-between items-start mb-4">
-              <div>
-                <div className="flex items-center gap-3 mb-2">
-                  <h3 className="text-lg font-semibold text-gray-900">
-                    {review.title?.cs || review.title?.en || 'Bez názvu'}
-                  </h3>
-                  <div className="flex items-center">
-                    {[...Array(5)].map((_, i) => (
-                      <svg
-                        key={i}
-                        className={`w-5 h-5 ${
-                          i < review.rating?.overall
-                            ? 'text-yellow-400'
-                            : 'text-gray-300'
-                        }`}
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    ))}
+        {reviews.map((review) => {
+          const isOrg = review.profile && 'establishment_name' in review.profile;
+          const linkPrefix = isOrg ? '/organizace' : '/profil';
+
+          return (
+            <div
+              key={review.id}
+              className={`bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow p-6 ${
+                review.status === 'quarantine'
+                  ? 'border-l-4 border-red-500'
+                  : 'border-l-4 border-green-500'
+              }`}
+            >
+              <div className="flex justify-between items-start mb-4">
+                <div className="flex-1">
+                  <div className="flex items-center gap-3 mb-3">
+                    {/* Profile Info */}
+                    <div className="flex items-center gap-2">
+                      <div className="text-2xl">
+                        {isOrg ? '🏢' : '👤'}
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-semibold text-gray-900">
+                          {review.profile?.name || 'Neznámý profil'}
+                        </h3>
+                        {review.profile && (
+                          <Link
+                            href={`${linkPrefix}/${review.profile.slug}`}
+                            target="_blank"
+                            className="text-sm text-blue-600 hover:text-blue-800"
+                          >
+                            /{review.profile.slug} →
+                          </Link>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Rating Stars */}
+                    <div className="flex items-center ml-auto">
+                      {[...Array(5)].map((_, i) => (
+                        <svg
+                          key={i}
+                          className={`w-5 h-5 ${
+                            i < review.rating
+                              ? 'text-yellow-400'
+                              : 'text-gray-300'
+                          }`}
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                      ))}
+                      <span className="ml-2 text-lg font-bold text-gray-900">
+                        {review.rating}.0
+                      </span>
+                    </div>
                   </div>
+
+                  {/* Author & Date */}
+                  <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
+                    <div>
+                      <span className="font-medium">Autor:</span>{' '}
+                      {review.author_name || 'Anonymní'}
+                    </div>
+                    <div>
+                      <span className="font-medium">Datum:</span>{' '}
+                      {review.created_at.toLocaleDateString('cs-CZ', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric',
+                      })}
+                    </div>
+                  </div>
+
+                  {/* Review Content */}
+                  <div className="bg-gray-50 rounded-lg p-4 mb-3">
+                    <p className="text-gray-700 leading-relaxed">
+                      {review.comment}
+                    </p>
+                  </div>
+
+                  {/* Quarantine Warning */}
+                  {review.status === 'quarantine' && (
+                    <div className="mb-3 p-3 bg-red-50 border border-red-200 rounded-lg">
+                      <div className="text-sm font-semibold text-red-900 mb-1">
+                        ⚠️ Důvod karantény:
+                      </div>
+                      <div className="text-sm text-red-700">
+                        Nízké hodnocení ({review.rating}/5) - vyžaduje manuální kontrolu
+                      </div>
+                    </div>
+                  )}
                 </div>
-                <div className="text-sm text-gray-600 mb-2">
-                  <span className="font-medium">Profil:</span>{' '}
-                  {review.target?.name || review.target?.globalID}
-                </div>
-                <div className="text-sm text-gray-600 mb-2">
-                  <span className="font-medium">Autor:</span>{' '}
-                  {review.author?.display_name} ({review.author?.handle})
-                  <span className="ml-2 px-2 py-0.5 bg-gray-100 rounded text-xs">
-                    {review.author?.reputation_level}
+
+                {/* Status Badge */}
+                <div className="ml-4">
+                  <span
+                    className={`px-3 py-1 rounded-full text-sm font-semibold whitespace-nowrap ${
+                      review.status === 'published'
+                        ? 'bg-green-100 text-green-800'
+                        : 'bg-red-100 text-red-800'
+                    }`}
+                  >
+                    {review.status === 'published' ? '✓ Publikováno' : '⚠️ Karanténa'}
                   </span>
-                </div>
-                <div className="text-sm text-gray-600">
-                  <span className="font-medium">Datum návštěvy:</span>{' '}
-                  {review.visit_date}
                 </div>
               </div>
 
-              <div className="flex items-center gap-2">
-                <span
-                  className={`px-3 py-1 rounded-full text-sm font-semibold ${
-                    review.status === 'published'
-                      ? 'bg-green-100 text-green-800'
-                      : review.status === 'quarantine'
-                      ? 'bg-red-100 text-red-800'
-                      : 'bg-gray-100 text-gray-800'
-                  }`}
-                >
-                  {review.status}
-                </span>
-                {review.verification?.status === 'verified' && (
-                  <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold">
-                    ✓ Verified
-                  </span>
+              {/* Actions */}
+              <div className="flex gap-3">
+                {review.status === 'quarantine' && (
+                  <>
+                    <button className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm font-medium">
+                      ✓ Schválit a publikovat
+                    </button>
+                    <button className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-sm font-medium">
+                      ✗ Odstranit
+                    </button>
+                  </>
                 )}
-              </div>
-            </div>
-
-            {/* Review Content */}
-            <div className="mb-4">
-              <p className="text-gray-700 leading-relaxed">
-                {review.content?.cs || review.content?.en}
-              </p>
-            </div>
-
-            {/* Quarantine Reason */}
-            {review.quarantine?.is_quarantined && review.quarantine?.reason && (
-              <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg">
-                <div className="text-sm font-semibold text-red-900 mb-1">
-                  Důvod karantény:
-                </div>
-                <div className="text-sm text-red-700">
-                  {review.quarantine.reason}
-                </div>
-              </div>
-            )}
-
-            {/* Content Policy Flags */}
-            {review.content_policy_check && (
-              <div className="mb-4 flex gap-3 text-sm">
-                {review.content_policy_check.has_pricing && (
-                  <span className="px-2 py-1 bg-red-100 text-red-800 rounded">
-                    🚫 Obsahuje ceny
-                  </span>
-                )}
-                {review.content_policy_check.has_contact_info && (
-                  <span className="px-2 py-1 bg-red-100 text-red-800 rounded">
-                    🚫 Obsahuje kontakt
-                  </span>
-                )}
-                {review.content_policy_check.is_spam && (
-                  <span className="px-2 py-1 bg-red-100 text-red-800 rounded">
-                    🚫 Spam
-                  </span>
-                )}
-              </div>
-            )}
-
-            {/* Engagement */}
-            <div className="flex items-center gap-6 text-sm text-gray-600 mb-4">
-              <div>
-                👍 {review.engagement?.helpful_votes || 0} helpful
-              </div>
-              <div>
-                👎 {review.engagement?.not_helpful_votes || 0} not helpful
-              </div>
-              {review.engagement?.report_count > 0 && (
-                <div className="text-red-600">
-                  ⚠️ {review.engagement.report_count} reports
-                </div>
-              )}
-            </div>
-
-            {/* Actions */}
-            <div className="flex gap-3">
-              {review.status === 'quarantine' && (
-                <>
-                  <button className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm">
-                    ✓ Schválit a publikovat
+                {review.status === 'published' && (
+                  <button className="px-4 py-2 bg-yellow-600 text-white rounded-lg hover:bg-yellow-700 transition-colors text-sm font-medium">
+                    ⚠️ Přesunout do karantény
                   </button>
-                  <button className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-sm">
-                    ✗ Odstranit
-                  </button>
-                </>
-              )}
-              {review.status === 'published' && (
-                <button className="px-4 py-2 bg-yellow-600 text-white rounded-lg hover:bg-yellow-700 transition-colors text-sm">
-                  ⚠️ Přesunout do karantény
+                )}
+                <button className="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors text-sm font-medium">
+                  Upravit
                 </button>
-              )}
-              <button className="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors text-sm">
-                Upravit
-              </button>
+                <Link
+                  href={review.profile ? `${linkPrefix}/${review.profile.slug}#recenze` : '#'}
+                  target="_blank"
+                  className="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors text-sm font-medium"
+                >
+                  Zobrazit na webu
+                </Link>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       {reviews.length === 0 && (
         <div className="text-center py-12 text-gray-500 bg-white rounded-lg shadow">
           {params.filter === 'quarantine'
             ? '🎉 Žádné recenze v karanténě!'
-            : 'Žádné recenze.'}
+            : params.filter === 'published'
+            ? '📝 Žádné publikované recenze.'
+            : '📝 Žádné recenze.'}
+        </div>
+      )}
+
+      {/* Summary Stats */}
+      {reviews.length > 0 && (
+        <div className="mt-6 bg-white rounded-lg shadow p-6">
+          <h3 className="text-lg font-semibold text-gray-900 mb-4">
+            Statistiky
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-sm">
+            <div>
+              <div className="text-gray-600 mb-1">Celkem recenzí</div>
+              <div className="text-2xl font-bold text-gray-900">
+                {allReviews.length}
+              </div>
+            </div>
+            <div>
+              <div className="text-gray-600 mb-1">Publikované</div>
+              <div className="text-2xl font-bold text-green-600">
+                {publishedCount}
+              </div>
+            </div>
+            <div>
+              <div className="text-gray-600 mb-1">V karanténě</div>
+              <div className="text-2xl font-bold text-red-600">
+                {quarantineCount}
+              </div>
+            </div>
+            <div>
+              <div className="text-gray-600 mb-1">Průměrné hodnocení</div>
+              <div className="text-2xl font-bold text-yellow-600">
+                {(allReviews.reduce((acc, r) => acc + r.rating, 0) / allReviews.length).toFixed(1)} ⭐
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </div>
