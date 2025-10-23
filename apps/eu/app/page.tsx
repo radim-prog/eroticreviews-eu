@@ -1,8 +1,32 @@
 import Link from "next/link";
-import { Search, Star, TrendingUp, Users } from "lucide-react";
+import { Search, Star, TrendingUp, Users, Clock, Award, Sparkles } from "lucide-react";
 import { PERSON_TYPES, ORG_TYPES } from "@/lib-cz/types";
+import { getAllReviews, getAllPeople, getAllOrganizations } from "@/lib-cz/demo-data";
+import StarRating from "@/components/StarRating";
 
 export default function Home() {
+  // Get latest reviews (sorted by date, limit 6)
+  const allReviews = getAllReviews();
+  const latestReviews = [...allReviews]
+    .sort((a, b) => b.created_at.getTime() - a.created_at.getTime())
+    .slice(0, 6);
+
+  // Get top rated profiles (people + orgs combined, sorted by rating, limit 6)
+  const allPeople = getAllPeople();
+  const allOrgs = getAllOrganizations();
+  const allProfiles = [...allPeople, ...allOrgs];
+  const topRatedProfiles = allProfiles
+    .filter(p => p.avg_rating && p.reviews_count && p.reviews_count >= 3)
+    .sort((a, b) => (b.avg_rating || 0) - (a.avg_rating || 0))
+    .slice(0, 6);
+
+  // Get newest profiles (last 30 days, limit 6)
+  const thirtyDaysAgo = new Date();
+  thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+  const newestProfiles = allProfiles
+    .filter(p => p.created_at >= thirtyDaysAgo)
+    .sort((a, b) => b.created_at.getTime() - a.created_at.getTime())
+    .slice(0, 6);
   return (
     <div className="bg-gradient-to-b from-gray-50 to-white">
       {/* Hero Section */}
@@ -55,6 +79,61 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Top Rated Profily */}
+      {topRatedProfiles.length > 0 && (
+        <section className="container mx-auto px-4 py-12">
+          <div className="flex items-center justify-between mb-8">
+            <div className="flex items-center gap-3">
+              <Award className="w-8 h-8 text-yellow-500" />
+              <h2 className="text-3xl font-bold text-gray-900">Nejlépe hodnocené</h2>
+            </div>
+            <Link href="/top-rated" className="text-blue-600 hover:text-blue-700 font-semibold">
+              Zobrazit všechny →
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {topRatedProfiles.map((profile) => {
+              const isOrg = 'establishment_name' in profile;
+              const linkPrefix = isOrg ? '/organizace' : '/profil';
+
+              return (
+                <Link
+                  key={profile.id}
+                  href={`${linkPrefix}/${profile.slug}`}
+                  className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden group"
+                >
+                  <div className="aspect-[4/3] bg-gradient-to-br from-yellow-50 to-yellow-100 relative overflow-hidden">
+                    <div className="absolute inset-0 flex items-center justify-center text-6xl opacity-50">
+                      {isOrg ? '🏢' : '👤'}
+                    </div>
+                    <div className="absolute top-3 right-3 bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-semibold flex items-center gap-1">
+                      <Award className="w-4 h-4" />
+                      TOP
+                    </div>
+                  </div>
+                  <div className="p-4">
+                    <h3 className="font-bold text-lg mb-2 group-hover:text-blue-600 transition-colors">
+                      {profile.name}
+                    </h3>
+                    {profile.avg_rating && (
+                      <div className="mb-2">
+                        <StarRating rating={profile.avg_rating} size={16} />
+                        <span className="text-sm text-gray-600 ml-2">
+                          ({profile.reviews_count || 0} recenzí)
+                        </span>
+                      </div>
+                    )}
+                    {'location' in profile && profile.location && (
+                      <p className="text-sm text-gray-600">📍 {profile.location}</p>
+                    )}
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </section>
+      )}
+
       {/* Kategorie osob */}
       <section className="container mx-auto px-4 py-12">
         <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Osoby</h2>
@@ -105,19 +184,128 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Nově přidané profily */}
+      {newestProfiles.length > 0 && (
+        <section className="container mx-auto px-4 py-12">
+          <div className="flex items-center justify-between mb-8">
+            <div className="flex items-center gap-3">
+              <Sparkles className="w-8 h-8 text-green-500" />
+              <h2 className="text-3xl font-bold text-gray-900">Nově přidané</h2>
+            </div>
+            <Link href="/nove-profily" className="text-blue-600 hover:text-blue-700 font-semibold">
+              Zobrazit všechny →
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {newestProfiles.map((profile) => {
+              const isOrg = 'establishment_name' in profile;
+              const linkPrefix = isOrg ? '/organizace' : '/profil';
+              const daysAgo = Math.floor((new Date().getTime() - profile.created_at.getTime()) / (1000 * 60 * 60 * 24));
+
+              return (
+                <Link
+                  key={profile.id}
+                  href={`${linkPrefix}/${profile.slug}`}
+                  className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden group"
+                >
+                  <div className="aspect-[4/3] bg-gradient-to-br from-green-50 to-green-100 relative overflow-hidden">
+                    <div className="absolute inset-0 flex items-center justify-center text-6xl opacity-50">
+                      {isOrg ? '🏢' : '👤'}
+                    </div>
+                    <div className="absolute top-3 right-3 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold flex items-center gap-1">
+                      <Sparkles className="w-4 h-4" />
+                      {daysAgo === 0 ? 'DNES' : `${daysAgo}d`}
+                    </div>
+                  </div>
+                  <div className="p-4">
+                    <h3 className="font-bold text-lg mb-2 group-hover:text-blue-600 transition-colors">
+                      {profile.name}
+                    </h3>
+                    {profile.avg_rating && (
+                      <div className="mb-2">
+                        <StarRating rating={profile.avg_rating} size={16} />
+                        <span className="text-sm text-gray-600 ml-2">
+                          ({profile.reviews_count || 0} recenzí)
+                        </span>
+                      </div>
+                    )}
+                    {'location' in profile && profile.location && (
+                      <p className="text-sm text-gray-600">📍 {profile.location}</p>
+                    )}
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </section>
+      )}
+
       {/* Nejnovější recenze */}
       <section className="bg-gray-50 py-12">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between mb-8">
-            <h2 className="text-3xl font-bold text-gray-900">Nejnovější recenze</h2>
+            <div className="flex items-center gap-3">
+              <Clock className="w-8 h-8 text-blue-500" />
+              <h2 className="text-3xl font-bold text-gray-900">Nejnovější recenze</h2>
+            </div>
             <Link href="/recenze" className="text-blue-600 hover:text-blue-700 font-semibold">
               Zobrazit všechny →
             </Link>
           </div>
-          <div className="bg-white rounded-xl shadow-lg p-8 text-center text-gray-500">
-            <Star className="w-12 h-12 mx-auto mb-4 text-gray-300" />
-            <p>Zatím zde nejsou žádné recenze. Buďte první, kdo přidá recenzi!</p>
-          </div>
+          {latestReviews.length === 0 ? (
+            <div className="bg-white rounded-xl shadow-lg p-8 text-center text-gray-500">
+              <Star className="w-12 h-12 mx-auto mb-4 text-gray-300" />
+              <p>Zatím zde nejsou žádné recenze. Buďte první, kdo přidá recenzi!</p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {latestReviews.map((review) => {
+                // Find the profile being reviewed
+                const profile = allProfiles.find(p => p.id === review.target_id);
+                const isOrg = profile && 'establishment_name' in profile;
+                const linkPrefix = isOrg ? '/organizace' : '/profil';
+
+                return (
+                  <Link
+                    key={review.id}
+                    href={profile ? `${linkPrefix}/${profile.slug}#recenze` : '#'}
+                    className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow p-6 group"
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0">
+                        <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full flex items-center justify-center text-2xl">
+                          {isOrg ? '🏢' : '👤'}
+                        </div>
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-start justify-between mb-2">
+                          <div>
+                            <h3 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                              {profile?.name || 'Neznámý profil'}
+                            </h3>
+                            <div className="flex items-center gap-2 mt-1">
+                              <StarRating rating={review.rating} size={14} />
+                              <span className="text-sm text-gray-500">
+                                {new Date(review.created_at).toLocaleDateString('cs-CZ')}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <p className="text-gray-600 text-sm line-clamp-3">
+                          {review.comment}
+                        </p>
+                        {review.author_name && (
+                          <p className="text-xs text-gray-400 mt-2">
+                            od {review.author_name}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          )}
         </div>
       </section>
 
