@@ -135,8 +135,8 @@ export default function HolkyNaSexPage() {
               className="bg-white rounded-lg shadow hover:shadow-lg transition duration-200 overflow-hidden group flex flex-col"
             >
               {/* Obrázek */}
-              <div className="relative h-48 bg-gradient-to-br from-gray-200 to-gray-300 overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center text-4xl">
+              <div className="relative aspect-[3/4] bg-gradient-to-br from-gray-200 to-gray-300 overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center text-6xl opacity-50">
                   👤
                 </div>
 
