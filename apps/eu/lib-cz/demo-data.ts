@@ -2831,6 +2831,496 @@ Pouze na objednávku. Noví klienti musí projít úvodním pohovorem.`,
     is_featured: false,
     created_at: new Date("2025-01-02"),
     updated_at: new Date("2025-01-02")
+  },
+  {
+    id: "bs4",
+    type: "bdsm_studio",
+    name: "Studio Dominance",
+    location: "Praha 3",
+    contacts: {
+      phone: "+420 773 222 333",
+      web: "https://studio-dominance.cz",
+      email: "booking@studio-dominance.cz"
+    },
+    description: `Studio Dominance - Profesionální BDSM studio v Praze 3.
+
+• Kompletně vybavený dungeon
+• Zkušené dominy a mistressy
+• Bezpečné a hygienické prostředí
+• SSC a RACK principy
+• Diskrétní vstup
+• Pouze na objednávku
+
+Nabízíme širokou škálu BDSM praktik včetně bondage, spanking, CBT, foot worship, feminizace a dalších. Respektujeme vaše limity a fantasie.`,
+    gallery: ["/placeholder.jpg"],
+    people_ids: ["8"],
+    reviews_count: 15,
+    avg_rating: 4.7,
+    slug: "studio-dominance-praha",
+    status: "publish",
+    is_featured: false,
+    created_at: new Date("2025-01-03"),
+    updated_at: new Date("2025-01-03")
+  },
+  {
+    id: "bs5",
+    type: "bdsm_studio",
+    name: "BDSM Palace Praha",
+    location: "Praha 4",
+    contacts: {
+      phone: "+420 774 555 666",
+      web: "https://bdsmpalace.cz",
+      address: "Nuselská, Praha 4"
+    },
+    description: `BDSM Palace - Luxusní BDSM studio s kompletním vybavením.
+
+• Několik tematických místností
+• Profesionální suspension systém
+• Latex a leather kolekce
+• Medical room
+• Sissy training prostory
+• VIP klientela
+
+Poskytujeme nejvyšší standard BDSM služeb v diskrétním a bezpečném prostředí.`,
+    gallery: ["/placeholder.jpg"],
+    people_ids: ["9b", "9c"],
+    reviews_count: 19,
+    avg_rating: 4.8,
+    slug: "bdsm-palace-praha",
+    status: "publish",
+    is_featured: true, // ⭐ PLACENÁ TOP POZICE
+    created_at: new Date("2025-01-05"),
+    updated_at: new Date("2025-01-05")
+  },
+  {
+    id: "bs6",
+    type: "bdsm_studio",
+    name: "Dungeon Ostrava",
+    location: "Ostrava",
+    contacts: {
+      phone: "+420 775 888 999",
+      email: "info@dungeon-ostrava.cz"
+    },
+    description: `Dungeon Ostrava - První BDSM studio v Ostravě.
+
+• Bondage nábytek
+• Kompletní vybavení pro session
+• Zkušené dominy
+• Bezpečné prostředí
+• Diskrétnost garantována
+
+Nabízíme BDSM sessions pro začátečníky i pokročilé. Úvodní konzultace zdarma.`,
+    gallery: ["/placeholder.jpg"],
+    people_ids: [],
+    reviews_count: 12,
+    avg_rating: 4.5,
+    slug: "dungeon-ostrava",
+    status: "publish",
+    is_featured: false,
+    created_at: new Date("2025-01-07"),
+    updated_at: new Date("2025-01-07")
+  },
+  {
+    id: "bs7",
+    type: "bdsm_studio",
+    name: "Torture Garden CZ",
+    location: "Praha 5",
+    contacts: {
+      phone: "+420 776 111 222",
+      web: "https://torturegarden.cz"
+    },
+    description: `Torture Garden - Alternativní BDSM studio pro náročné.
+
+• Dark dungeon atmosféra
+• Heavy BDSM praktiky
+• Zkušené dominy s long-term praxí
+• Pouze pro pokročilé submissivy
+• Striktní bezpečnostní protokoly
+
+Pro nové klienty vyžadujeme předchozí zkušenosti a reference.`,
+    gallery: ["/placeholder.jpg"],
+    people_ids: ["8"],
+    reviews_count: 8,
+    avg_rating: 4.9,
+    slug: "torture-garden-praha",
+    status: "publish",
+    is_featured: false,
+    created_at: new Date("2025-01-09"),
+    updated_at: new Date("2025-01-09")
+  },
+  {
+    id: "bs8",
+    type: "bdsm_studio",
+    name: "Fetish Factory",
+    location: "Praha 7",
+    contacts: {
+      phone: "+420 777 333 444",
+      web: "https://fetishfactory.cz",
+      email: "sessions@fetishfactory.cz"
+    },
+    description: `Fetish Factory - BDSM studio se zaměřením na fetish praktiky.
+
+• Latex a leather fetish
+• Foot worship specialist
+• Smoking fetish
+• Nylon worship
+• High heels domination
+• Kompletní fetish wardrobe
+
+Profesionální dominy s citem pro detail a atmosféru.`,
+    gallery: ["/placeholder.jpg"],
+    people_ids: ["9c"],
+    reviews_count: 14,
+    avg_rating: 4.6,
+    slug: "fetish-factory-praha",
+    status: "publish",
+    is_featured: false,
+    created_at: new Date("2025-01-11"),
+    updated_at: new Date("2025-01-11")
+  },
+  {
+    id: "bs9",
+    type: "bdsm_studio",
+    name: "Dominion Studio",
+    location: "Brno",
+    contacts: {
+      phone: "+420 778 666 777",
+      email: "domina@dominion-brno.cz"
+    },
+    description: `Dominion Studio - BDSM studio v centru Brna.
+
+• Profesionální dungeon
+• Zkušené brněnské dominy
+• Bezpečné a čisté prostředí
+• Široká škála praktik
+• Flexibilní hodiny
+
+Vítáme začátečníky i zkušené submissivy. Session od 60 minut.`,
+    gallery: ["/placeholder.jpg"],
+    people_ids: [],
+    reviews_count: 11,
+    avg_rating: 4.4,
+    slug: "dominion-studio-brno",
+    status: "publish",
+    is_featured: false,
+    created_at: new Date("2025-01-13"),
+    updated_at: new Date("2025-01-13")
+  },
+  {
+    id: "bs10",
+    type: "bdsm_studio",
+    name: "Black Chamber",
+    location: "Praha 8",
+    contacts: {
+      phone: "+420 779 888 111",
+      web: "https://blackchamber.cz"
+    },
+    description: `Black Chamber - Dark BDSM experience.
+
+• Gothic dungeon atmosféra
+• Heavy bondage
+• Elektro stimulace
+• Wax play
+• Medical BDSM
+• Breath play (pouze pro zkušené)
+
+Pouze na objednávku. Vyžadujeme health declaration form.`,
+    gallery: ["/placeholder.jpg"],
+    people_ids: ["8"],
+    reviews_count: 16,
+    avg_rating: 4.8,
+    slug: "black-chamber-praha",
+    status: "publish",
+    is_featured: false,
+    created_at: new Date("2025-01-15"),
+    updated_at: new Date("2025-01-15")
+  },
+  {
+    id: "bs11",
+    type: "bdsm_studio",
+    name: "Maison de Sade",
+    location: "Praha 6",
+    contacts: {
+      phone: "+420 773 999 222",
+      web: "https://maisondesade.cz",
+      email: "reservation@maisondesade.cz"
+    },
+    description: `Maison de Sade - Luxusní BDSM studio s francouzským šarmem.
+
+• Elegantní dungeon design
+• VIP klientela
+• Profesionální dominy
+• Vintage bondage nábytek
+• Exclusive sessions
+• Kompletní diskréce
+
+Pro náročné gentlemany hledající stylový BDSM zážitek.`,
+    gallery: ["/placeholder.jpg"],
+    people_ids: ["9c"],
+    reviews_count: 21,
+    avg_rating: 4.9,
+    slug: "maison-de-sade-praha",
+    status: "publish",
+    is_featured: false,
+    created_at: new Date("2025-01-17"),
+    updated_at: new Date("2025-01-17")
+  },
+  {
+    id: "bs12",
+    type: "bdsm_studio",
+    name: "Pain & Pleasure Studio",
+    location: "Plzeň",
+    contacts: {
+      phone: "+420 774 222 555",
+      email: "info@painpleasure.cz"
+    },
+    description: `Pain & Pleasure - BDSM studio v Plzni.
+
+• Dungeon s bondage vybavením
+• Spanking & CP praktiky
+• Roleplay scenarios
+• Začátečníci vítáni
+• Bezpečné prostředí
+
+První BDSM studio v Plzni. Nabízíme úvodní session pro nováčky.`,
+    gallery: ["/placeholder.jpg"],
+    people_ids: [],
+    reviews_count: 9,
+    avg_rating: 4.3,
+    slug: "pain-pleasure-plzen",
+    status: "publish",
+    is_featured: false,
+    created_at: new Date("2025-01-19"),
+    updated_at: new Date("2025-01-19")
+  },
+  {
+    id: "bs13",
+    type: "bdsm_studio",
+    name: "Domina Arena",
+    location: "Praha 10",
+    contacts: {
+      phone: "+420 775 333 888",
+      web: "https://domina-arena.cz"
+    },
+    description: `Domina Arena - BDSM studio s focus na role play.
+
+• Roleplay scenáře (učitelka, šéfová, policistka...)
+• Feminizace a sissy training
+• Strap-on sessions
+• Foot worship
+• Humiliation scenarios
+
+Kreativní a zábavný přístup k BDSM. Session šité na míru.`,
+    gallery: ["/placeholder.jpg"],
+    people_ids: ["9b"],
+    reviews_count: 13,
+    avg_rating: 4.6,
+    slug: "domina-arena-praha",
+    status: "publish",
+    is_featured: false,
+    created_at: new Date("2025-01-20"),
+    updated_at: new Date("2025-01-20")
+  },
+  {
+    id: "bs14",
+    type: "bdsm_studio",
+    name: "Studio Submissive",
+    location: "Praha 9",
+    contacts: {
+      phone: "+420 776 444 999",
+      email: "contact@studio-submissive.cz"
+    },
+    description: `Studio Submissive - Pro ty, kteří chtějí sloužit.
+
+• Worship sessions
+• Service training
+• Domestic servitude
+• Pet play
+• Chastity keyholder services
+• Long-term D/s relationship možnosti
+
+Studio pro submissivy hledající reálnou D/s dynamiku.`,
+    gallery: ["/placeholder.jpg"],
+    people_ids: ["8"],
+    reviews_count: 17,
+    avg_rating: 4.7,
+    slug: "studio-submissive-praha",
+    status: "publish",
+    is_featured: false,
+    created_at: new Date("2025-01-21"),
+    updated_at: new Date("2025-01-21")
+  },
+  {
+    id: "bs15",
+    type: "bdsm_studio",
+    name: "Red Room Praha",
+    location: "Praha 1",
+    contacts: {
+      phone: "+420 777 555 888",
+      web: "https://redroom-praha.cz",
+      address: "Staré Město, Praha 1"
+    },
+    description: `Red Room - Luxusní BDSM studio v centru Prahy.
+
+• Premium lokace
+• Moderní dungeon design
+• Top level dominy
+• Kompletní vybavení
+• VIP service
+• Catering možnosti
+
+Pro náročné klienty hledající top tier BDSM experience.`,
+    gallery: ["/placeholder.jpg"],
+    people_ids: ["8", "9c"],
+    reviews_count: 25,
+    avg_rating: 4.9,
+    slug: "red-room-praha",
+    status: "publish",
+    is_featured: true, // ⭐ PLACENÁ TOP POZICE
+    created_at: new Date("2025-01-22"),
+    updated_at: new Date("2025-01-22")
+  },
+  {
+    id: "bs16",
+    type: "bdsm_studio",
+    name: "Leather & Chains",
+    location: "Liberec",
+    contacts: {
+      phone: "+420 778 111 333",
+      email: "info@leatherchains.cz"
+    },
+    description: `Leather & Chains - BDSM studio v Liberci.
+
+• Leather fetish specialist
+• Bondage praktiky
+• CBT sessions
+• Trampling
+• Basic až advanced level
+
+BDSM studio pro klienty ze severních Čech.`,
+    gallery: ["/placeholder.jpg"],
+    people_ids: [],
+    reviews_count: 7,
+    avg_rating: 4.2,
+    slug: "leather-chains-liberec",
+    status: "publish",
+    is_featured: false,
+    created_at: new Date("2025-01-23"),
+    updated_at: new Date("2025-01-23")
+  },
+  {
+    id: "bs17",
+    type: "bdsm_studio",
+    name: "Mistress Lounge",
+    location: "Praha 2",
+    contacts: {
+      phone: "+420 779 222 666",
+      web: "https://mistress-lounge.cz"
+    },
+    description: `Mistress Lounge - Stylové BDSM studio s komfortním prostředím.
+
+• Lounge atmosféra
+• Soft až medium BDSM
+• Začátečníci preferováni
+• Friendly dominy
+• Session s aftercare
+• Edukační přístup
+
+Ideální pro ty, kteří začínají s BDSM a hledají empatický přístup.`,
+    gallery: ["/placeholder.jpg"],
+    people_ids: ["9b"],
+    reviews_count: 14,
+    avg_rating: 4.5,
+    slug: "mistress-lounge-praha",
+    status: "publish",
+    is_featured: false,
+    created_at: new Date("2025-01-24"),
+    updated_at: new Date("2025-01-24")
+  },
+  {
+    id: "bs18",
+    type: "bdsm_studio",
+    name: "Shadow Dungeon",
+    location: "Olomouc",
+    contacts: {
+      phone: "+420 773 777 999",
+      email: "dungeon@shadow-olomouc.cz"
+    },
+    description: `Shadow Dungeon - BDSM studio v Olomouci.
+
+• Profesionální dungeon
+• Zkušené dominy z Olomouce
+• Kompletní bondage vybavení
+• CP praktiky
+• Diskrétní lokace
+
+BDSM services pro střední Moravu.`,
+    gallery: ["/placeholder.jpg"],
+    people_ids: [],
+    reviews_count: 10,
+    avg_rating: 4.4,
+    slug: "shadow-dungeon-olomouc",
+    status: "publish",
+    is_featured: false,
+    created_at: new Date("2025-01-25"),
+    updated_at: new Date("2025-01-25")
+  },
+  {
+    id: "bs19",
+    type: "bdsm_studio",
+    name: "Velvet Whip Studio",
+    location: "Praha 3",
+    contacts: {
+      phone: "+420 774 888 333",
+      web: "https://velvetwhip.cz"
+    },
+    description: `Velvet Whip - Elegantní BDSM studio se smyslem pro detail.
+
+• Stylový dungeon
+• Profesionální impact play
+• Rope bondage specialist
+• Shibari sessions
+• Aesthetic BDSM
+• Photo sessions možné
+
+Pro milovníky estetického BDSM a japonské rope bondage.`,
+    gallery: ["/placeholder.jpg"],
+    people_ids: ["8"],
+    reviews_count: 18,
+    avg_rating: 4.8,
+    slug: "velvet-whip-praha",
+    status: "publish",
+    is_featured: false,
+    created_at: new Date("2025-01-26"),
+    updated_at: new Date("2025-01-26")
+  },
+  {
+    id: "bs20",
+    type: "bdsm_studio",
+    name: "Iron Maiden Studio",
+    location: "Hradec Králové",
+    contacts: {
+      phone: "+420 775 999 444",
+      email: "booking@ironmaiden-hk.cz"
+    },
+    description: `Iron Maiden - BDSM studio v Hradci Králové.
+
+• Kompletně vybavený dungeon
+• Medieval BDSM vybavení
+• Strict dominy
+• Heavy sessions možné
+• Pouze na objednávku
+
+Pro submissivy z východních Čech hledající quality BDSM experience.`,
+    gallery: ["/placeholder.jpg"],
+    people_ids: [],
+    reviews_count: 11,
+    avg_rating: 4.6,
+    slug: "iron-maiden-hradec-kralove",
+    status: "publish",
+    is_featured: false,
+    created_at: new Date("2025-01-27"),
+    updated_at: new Date("2025-01-27")
   }
 ];
 
@@ -2952,6 +3442,485 @@ Nabízíme exkluzivní escort služby s důrazem na kvalitu, diskrétnost a prof
     is_featured: false,
     created_at: new Date("2024-12-28"),
     updated_at: new Date("2024-12-28")
+  },
+  {
+    id: "ea5",
+    type: "escort_agentura",
+    name: "Angels Praha",
+    location: "Praha 3",
+    contacts: {
+      phone: "+420 774 123 456",
+      web: "https://angels-praha.cz",
+      email: "booking@angels-praha.cz",
+      address: "Vinohrady, Praha 3"
+    },
+    description: `Angels Praha - Moderní escort agentura s mladými společnicemi.
+
+• České modelky
+• Fresh faces
+• GFE specialist
+• Hotel & apartment visits
+• 24/7 booking
+• Ověřené fotografie
+
+Naše společnice jsou mladé, krásné a profesionální. Zaměřujeme se na autentický GFE experience a příjemnou atmosféru.`,
+    gallery: ["/placeholder.jpg"],
+    people_ids: ["1", "1b"],
+    reviews_count: 18,
+    avg_rating: 4.5,
+    slug: "angels-praha",
+    status: "publish",
+    is_featured: false,
+    created_at: new Date("2025-01-06"),
+    updated_at: new Date("2025-01-06")
+  },
+  {
+    id: "ea6",
+    type: "escort_agentura",
+    name: "VIP Angels Ostrava",
+    location: "Ostrava",
+    contacts: {
+      phone: "+420 775 234 567",
+      email: "info@vipangels-ostrava.cz",
+      web: "https://vipangels-ostrava.cz"
+    },
+    description: `VIP Angels - Prémiová escort agentura v Ostravě.
+
+• Luxury escort Ostrava
+• České i zahraniční modelky
+• Business doprovod
+• VIP events
+• Diskrétní service
+
+První prémiová escort agentura v Ostravě. Poskytujeme high-class escort služby pro náročnou klientelu.`,
+    gallery: ["/placeholder.jpg"],
+    people_ids: ["1e"],
+    reviews_count: 14,
+    avg_rating: 4.6,
+    slug: "vip-angels-ostrava",
+    status: "publish",
+    is_featured: false,
+    created_at: new Date("2025-01-08"),
+    updated_at: new Date("2025-01-08")
+  },
+  {
+    id: "ea7",
+    type: "escort_agentura",
+    name: "Platinum Escorts",
+    location: "Praha 1",
+    contacts: {
+      phone: "+420 776 345 678",
+      web: "https://platinum-escorts.cz",
+      email: "vip@platinum-escorts.cz",
+      address: "Nové Město, Praha 1"
+    },
+    description: `Platinum Escorts - Exkluzivní escort služby pro VIP klientelu.
+
+• Top tier models
+• International escorts
+• Overnight bookings
+• Travel companion
+• Luxury apartments available
+• Personal concierge
+
+Poskytujeme nejvyšší standard escort služeb. Naše společnice jsou pečlivě vybrané profesionálky s perfektními maniery.`,
+    gallery: ["/placeholder.jpg"],
+    people_ids: ["1c", "2c"],
+    reviews_count: 28,
+    avg_rating: 4.9,
+    slug: "platinum-escorts-praha",
+    status: "publish",
+    is_featured: true, // ⭐ PLACENÁ TOP POZICE
+    created_at: new Date("2025-01-10"),
+    updated_at: new Date("2025-01-10")
+  },
+  {
+    id: "ea8",
+    type: "escort_agentura",
+    name: "Pink Ladies",
+    location: "Praha 4",
+    contacts: {
+      phone: "+420 777 456 789",
+      email: "booking@pink-ladies.cz",
+      web: "https://pink-ladies.cz"
+    },
+    description: `Pink Ladies - Escort agentura se zaměřením na GFE experience.
+
+• GFE specialist
+• Mladé české holky
+• Přátelská atmosféra
+• Hotel escort
+• Outcall Praha
+• Dostupné ceny
+
+Naše dívky jsou милé, natural a mají rádi svou práci. Zaměřujeme se na girlfriend experience a příjemnou atmosféru.`,
+    gallery: ["/placeholder.jpg"],
+    people_ids: ["1", "1d"],
+    reviews_count: 22,
+    avg_rating: 4.4,
+    slug: "pink-ladies-praha",
+    status: "publish",
+    is_featured: false,
+    created_at: new Date("2025-01-12"),
+    updated_at: new Date("2025-01-12")
+  },
+  {
+    id: "ea9",
+    type: "escort_agentura",
+    name: "Luxury Companions",
+    location: "Brno",
+    contacts: {
+      phone: "+420 778 567 890",
+      web: "https://luxurycompanions-brno.cz",
+      address: "Centrum, Brno"
+    },
+    description: `Luxury Companions - Prémiové escort služby v Brně.
+
+• High-class Brno escort
+• Vzdělané společnice
+• Business meetings
+• Dinner dates
+• Weekend trips
+• Verified reviews
+
+Nabízíme sofistikované společnice pro náročné businessmany a gentlemany v Brně a okolí.`,
+    gallery: ["/placeholder.jpg"],
+    people_ids: ["1e", "2e"],
+    reviews_count: 16,
+    avg_rating: 4.7,
+    slug: "luxury-companions-brno",
+    status: "publish",
+    is_featured: false,
+    created_at: new Date("2025-01-14"),
+    updated_at: new Date("2025-01-14")
+  },
+  {
+    id: "ea10",
+    type: "escort_agentura",
+    name: "Golden Gate Escort",
+    location: "Praha 5",
+    contacts: {
+      phone: "+420 779 678 901",
+      email: "info@goldengate-escort.cz",
+      web: "https://goldengate-escort.cz"
+    },
+    description: `Golden Gate Escort - Profesionální escort agentura v Praze 5.
+
+• České escort modelky
+• Hotel visits
+• Apartment escort
+• Duo možné
+• Flexible booking
+• Safe & discreet
+
+Poskytujeme kvalitní escort služby v Praze 5 a okolí. Naše dívky jsou profesionální a diskrétní.`,
+    gallery: ["/placeholder.jpg"],
+    people_ids: ["1b", "1d"],
+    reviews_count: 20,
+    avg_rating: 4.5,
+    slug: "golden-gate-escort-praha",
+    status: "publish",
+    is_featured: false,
+    created_at: new Date("2025-01-16"),
+    updated_at: new Date("2025-01-16")
+  },
+  {
+    id: "ea11",
+    type: "escort_agentura",
+    name: "Exclusive Models CZ",
+    location: "Praha 2",
+    contacts: {
+      phone: "+420 773 789 012",
+      web: "https://exclusivemodels.cz",
+      email: "booking@exclusivemodels.cz",
+      address: "Vinohrady, Praha 2"
+    },
+    description: `Exclusive Models - Modelingová a escort agentura.
+
+• Professional models
+• Fashion & commercial
+• Escort services
+• International clients
+• Portfolio shoots
+• Event hostesses
+
+Kombinujeme modelingovou a escort činnost. Naše modelky pracují profesionálně v obou oblastech.`,
+    gallery: ["/placeholder.jpg"],
+    people_ids: ["1c", "2a"],
+    reviews_count: 24,
+    avg_rating: 4.8,
+    slug: "exclusive-models-praha",
+    status: "publish",
+    is_featured: false,
+    created_at: new Date("2025-01-17"),
+    updated_at: new Date("2025-01-17")
+  },
+  {
+    id: "ea12",
+    type: "escort_agentura",
+    name: "Dream Girls Agency",
+    location: "Plzeň",
+    contacts: {
+      phone: "+420 774 890 123",
+      email: "info@dreamgirls-plzen.cz"
+    },
+    description: `Dream Girls - Escort agentura v Plzni.
+
+• Plzeňské escort služby
+• České společnice
+• Hotel & private visits
+• GFE experience
+• Verified profiles
+
+První escort agentura v Plzni s ověřenými profily. Diskrétní a profesionální služby.`,
+    gallery: ["/placeholder.jpg"],
+    people_ids: [],
+    reviews_count: 11,
+    avg_rating: 4.3,
+    slug: "dream-girls-plzen",
+    status: "publish",
+    is_featured: false,
+    created_at: new Date("2025-01-18"),
+    updated_at: new Date("2025-01-18")
+  },
+  {
+    id: "ea13",
+    type: "escort_agentura",
+    name: "Royal Escort Praha",
+    location: "Praha 1",
+    contacts: {
+      phone: "+420 775 901 234",
+      web: "https://royal-escort.cz",
+      email: "vip@royal-escort.cz"
+    },
+    description: `Royal Escort - VIP escort agentura s královským přístupem.
+
+• VIP společnice
+• Luxury hotels
+• Business travel companion
+• International escorts
+• Concierge available
+• Absolute discretion
+
+Pro nejnáročnější klienty hledající nejvyšší standard escort služeb. Kompletní diskréce garantována.`,
+    gallery: ["/placeholder.jpg"],
+    people_ids: ["1c", "2d"],
+    reviews_count: 30,
+    avg_rating: 4.9,
+    slug: "royal-escort-praha",
+    status: "publish",
+    is_featured: false,
+    created_at: new Date("2025-01-19"),
+    updated_at: new Date("2025-01-19")
+  },
+  {
+    id: "ea14",
+    type: "escort_agentura",
+    name: "Sweet Angels",
+    location: "Praha 6",
+    contacts: {
+      phone: "+420 776 012 345",
+      email: "booking@sweet-angels.cz",
+      web: "https://sweet-angels.cz"
+    },
+    description: `Sweet Angels - Escort agentura s mladými česk ými holkami.
+
+• Young & fresh
+• Natural beauty
+• GFE focused
+• Student models
+• Affordable rates
+• Real photos
+
+Naše dívky jsou mladé, natural a mají pozitivní energii. Ideální pro GFE experience za rozumnou cenu.`,
+    gallery: ["/placeholder.jpg"],
+    people_ids: ["1", "1b"],
+    reviews_count: 19,
+    avg_rating: 4.4,
+    slug: "sweet-angels-praha",
+    status: "publish",
+    is_featured: false,
+    created_at: new Date("2025-01-20"),
+    updated_at: new Date("2025-01-20")
+  },
+  {
+    id: "ea15",
+    type: "escort_agentura",
+    name: "Premium Babes",
+    location: "Praha 7",
+    contacts: {
+      phone: "+420 777 123 456",
+      web: "https://premium-babes.cz",
+      address: "Holešovice, Praha 7"
+    },
+    description: `Premium Babes - Moderní escort agentura s fresh přístupem.
+
+• Modern escort approach
+• Verified models
+• Flexible booking
+• Duo available
+• PSE & GFE
+• Party girls
+
+Fresh a moderní přístup k escort business. Naše holky jsou fun, professional a open-minded.`,
+    gallery: ["/placeholder.jpg"],
+    people_ids: ["1d", "2a"],
+    reviews_count: 21,
+    avg_rating: 4.6,
+    slug: "premium-babes-praha",
+    status: "publish",
+    is_featured: false,
+    created_at: new Date("2025-01-21"),
+    updated_at: new Date("2025-01-21")
+  },
+  {
+    id: "ea16",
+    type: "escort_agentura",
+    name: "Elite Girls Brno",
+    location: "Brno",
+    contacts: {
+      phone: "+420 778 234 567",
+      email: "contact@elitegirls-brno.cz",
+      web: "https://elitegirls-brno.cz"
+    },
+    description: `Elite Girls - Prémiová escort agentura v Brně.
+
+• Brno luxury escort
+• Czech & international
+• Hotel outcall
+• Business escort
+• Event companions
+• VIP treatment
+
+Poskytujeme top tier escort služby v Brně pro náročné klienty. Profesionalita a diskréce na prvním místě.`,
+    gallery: ["/placeholder.jpg"],
+    people_ids: ["1e"],
+    reviews_count: 17,
+    avg_rating: 4.7,
+    slug: "elite-girls-brno",
+    status: "publish",
+    is_featured: false,
+    created_at: new Date("2025-01-22"),
+    updated_at: new Date("2025-01-22")
+  },
+  {
+    id: "ea17",
+    type: "escort_agentura",
+    name: "Secret Desires",
+    location: "Praha 8",
+    contacts: {
+      phone: "+420 779 345 678",
+      email: "info@secret-desires.cz"
+    },
+    description: `Secret Desires - Escort agentura pro splnění vašich přání.
+
+• Fantasy fulfillment
+• Roleplay specialists
+• Kinky escort available
+• Duo & trio
+• Fetish friendly
+• Open-minded girls
+
+Pro klienty hledající něco víc než klasický escort. Naše dívky jsou open-minded a fetish friendly.`,
+    gallery: ["/placeholder.jpg"],
+    people_ids: ["1d", "2b"],
+    reviews_count: 15,
+    avg_rating: 4.5,
+    slug: "secret-desires-praha",
+    status: "publish",
+    is_featured: false,
+    created_at: new Date("2025-01-23"),
+    updated_at: new Date("2025-01-23")
+  },
+  {
+    id: "ea18",
+    type: "escort_agentura",
+    name: "Imperial Escorts",
+    location: "Praha 1",
+    contacts: {
+      phone: "+420 773 456 789",
+      web: "https://imperial-escorts.cz",
+      email: "reservation@imperial-escorts.cz",
+      address: "Staré Město, Praha 1"
+    },
+    description: `Imperial Escorts - Luxusní escort agentura s tradicí.
+
+• Established since 2015
+• High-class companions
+• International clientele
+• Business & leisure
+• Overnight available
+• Personal assistant service
+
+10 let na trhu. Poskytujeme nejvyšší standard escort služeb pro VIP klientelu z celého světa.`,
+    gallery: ["/placeholder.jpg"],
+    people_ids: ["1c", "2c", "2d"],
+    reviews_count: 42,
+    avg_rating: 4.9,
+    slug: "imperial-escorts-praha",
+    status: "publish",
+    is_featured: true, // ⭐ PLACENÁ TOP POZICE
+    created_at: new Date("2025-01-24"),
+    updated_at: new Date("2025-01-24")
+  },
+  {
+    id: "ea19",
+    type: "escort_agentura",
+    name: "Night Angels Ostrava",
+    location: "Ostrava",
+    contacts: {
+      phone: "+420 774 567 890",
+      email: "booking@nightangels-ostrava.cz"
+    },
+    description: `Night Angels - Escort služby v Ostravě a okolí.
+
+• Ostrava escort
+• České společnice
+• Evening & night dates
+• Hotel visits
+• Party escort
+• Flexible hours
+
+Poskytujeme escort služby v Ostravě pro večerní a noční schůzky. Diskrétní a profesionální přístup.`,
+    gallery: ["/placeholder.jpg"],
+    people_ids: [],
+    reviews_count: 13,
+    avg_rating: 4.4,
+    slug: "night-angels-ostrava",
+    status: "publish",
+    is_featured: false,
+    created_at: new Date("2025-01-25"),
+    updated_at: new Date("2025-01-25")
+  },
+  {
+    id: "ea20",
+    type: "escort_agentura",
+    name: "Desire Agency Praha",
+    location: "Praha 10",
+    contacts: {
+      phone: "+420 775 678 901",
+      web: "https://desire-agency.cz",
+      email: "info@desire-agency.cz"
+    },
+    description: `Desire Agency - Moderní escort agentura s širokým portfoliem.
+
+• Variety of models
+• All types & preferences
+• Czech & foreign girls
+• Incall & outcall
+• Last minute bookings
+• 24/7 availability
+
+Široké portfolio společnic pro různé preference. Od GFE až po PSE, od natural po glamour.`,
+    gallery: ["/placeholder.jpg"],
+    people_ids: ["1", "1b", "2a"],
+    reviews_count: 26,
+    avg_rating: 4.6,
+    slug: "desire-agency-praha",
+    status: "publish",
+    is_featured: false,
+    created_at: new Date("2025-01-26"),
+    updated_at: new Date("2025-01-26")
   }
 ];
 
@@ -3150,4 +4119,8 @@ export function getReviewsByTargetId(targetId: string): Review[] {
 
 export function getAllReviews(): Review[] {
   return demoReviews;
+}
+
+export function getReviewById(id: string): Review | undefined {
+  return demoReviews.find(r => r.id === id);
 }

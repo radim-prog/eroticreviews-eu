@@ -114,7 +114,7 @@ export default function ErotickeMasazePage() {
               <option value="reviews">Nejvíce recenzí</option>
             </select>
 
-            <div className="ml-auto text-sm text-gray-600 flex items-center">
+            <div className="ml-auto text-sm text-gray-900 flex items-center">
               Nalezeno: <span className="font-semibold ml-1">{filteredPeople.length}</span>
             </div>
           </div>

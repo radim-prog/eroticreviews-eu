@@ -87,7 +87,7 @@ export default function RecenzePage() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex flex-wrap gap-3">
             <select
-              className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="px-4 py-2 border border-gray-300 rounded-lg text-gray-900 font-medium focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               value={selectedType}
               onChange={(e) => setSelectedType(e.target.value)}
             >
@@ -97,7 +97,7 @@ export default function RecenzePage() {
             </select>
 
             <select
-              className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="px-4 py-2 border border-gray-300 rounded-lg text-gray-900 font-medium focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               value={selectedRating}
               onChange={(e) => setSelectedRating(e.target.value)}
             >
@@ -108,7 +108,7 @@ export default function RecenzePage() {
             </select>
 
             <select
-              className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="px-4 py-2 border border-gray-300 rounded-lg text-gray-900 font-medium focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
             >
@@ -144,16 +144,17 @@ export default function RecenzePage() {
                 : `/organizace/${review.target_id}`;
 
               return (
-                <div key={review.id} className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition">
+                <Link
+                  key={review.id}
+                  href={`/recenze/${review.id}`}
+                  className="block bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition"
+                >
                   {/* Header */}
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex-1">
-                      <Link
-                        href={targetUrl}
-                        className="text-blue-600 hover:text-blue-700 font-semibold mb-2 inline-block"
-                      >
+                      <div className="text-blue-600 font-semibold mb-2">
                         Recenze na: {target?.name || "Neznámý"}
-                      </Link>
+                      </div>
                       <h2 className="text-2xl font-bold text-gray-900 mb-2">
                         {review.title}
                       </h2>
@@ -187,14 +188,11 @@ export default function RecenzePage() {
                     <span className="text-sm text-gray-500">
                       {review.target_type === "person" ? "Osoba" : "Podnik"}
                     </span>
-                    <Link
-                      href={targetUrl}
-                      className="text-blue-600 hover:text-blue-700 text-sm font-semibold"
-                    >
-                      Zobrazit profil →
-                    </Link>
+                    <span className="text-blue-600 text-sm font-semibold">
+                      Číst celou recenzi →
+                    </span>
                   </div>
-                </div>
+                </Link>
               );
             })
           ) : (

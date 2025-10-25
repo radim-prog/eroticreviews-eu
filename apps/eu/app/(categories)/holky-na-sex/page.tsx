@@ -90,7 +90,7 @@ export default function HolkyNaSexPage() {
             <select
               value={selectedLocation}
               onChange={(e) => setSelectedLocation(e.target.value)}
-              className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="px-4 py-2 border border-gray-300 rounded-lg text-gray-900 font-medium focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             >
               <option value="all">Všechny lokality</option>
               {availableLocations.map(loc => (
@@ -101,7 +101,7 @@ export default function HolkyNaSexPage() {
             <select
               value={selectedRating}
               onChange={(e) => setSelectedRating(e.target.value)}
-              className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="px-4 py-2 border border-gray-300 rounded-lg text-gray-900 font-medium focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             >
               <option value="all">Všechna hodnocení</option>
               <option value="4+">4+ hvězdy</option>
@@ -111,14 +111,14 @@ export default function HolkyNaSexPage() {
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="px-4 py-2 border border-gray-300 rounded-lg text-gray-900 font-medium focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             >
               <option value="newest">Nejnovější</option>
               <option value="rating">Nejlépe hodnocené</option>
               <option value="reviews">Nejvíce recenzí</option>
             </select>
 
-            <div className="ml-auto text-sm text-gray-600 flex items-center">
+            <div className="ml-auto text-sm text-gray-900 flex items-center">
               Nalezeno: <span className="font-semibold ml-1">{filteredPeople.length}</span>
             </div>
           </div>
