@@ -301,7 +301,7 @@ export default function Home() {
                           {review.comment}
                         </p>
                         {review.author_name && (
-                          <p className="text-xs text-gray-400 mt-2">
+                          <p className="text-xs text-gray-500 mt-2">
                             od {review.author_name}
                           </p>
                         )}
