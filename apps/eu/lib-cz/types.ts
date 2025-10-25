@@ -30,6 +30,7 @@ export interface Person {
   avg_rating: number;
   slug: string; // URL friendly
   status: PublishStatus;
+  is_featured: boolean; // Placená TOP pozice
   created_at: Date;
   updated_at: Date;
 }
@@ -52,6 +53,7 @@ export interface Organization {
   avg_rating: number;
   slug: string;
   status: PublishStatus;
+  is_featured: boolean; // Placená TOP pozice
   created_at: Date;
   updated_at: Date;
 }

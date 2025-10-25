@@ -153,7 +153,7 @@ export default function CategoryPage({
         </div>
 
         {/* Items grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
           {filteredItems.map((item) => (
             <Link
               key={item.id}
@@ -161,7 +161,7 @@ export default function CategoryPage({
               className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden group"
             >
               {/* Image placeholder */}
-              <div className="aspect-[4/3] bg-gradient-to-br from-gray-100 to-gray-200 relative overflow-hidden">
+              <div className="aspect-[3/4] bg-gradient-to-br from-gray-100 to-gray-200 relative overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center text-6xl opacity-50">
                   {emoji}
                 </div>

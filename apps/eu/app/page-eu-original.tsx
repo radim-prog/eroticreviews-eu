@@ -105,7 +105,7 @@ export default async function HomePage() {
       {/* Cities Section */}
       <section className="container mx-auto px-4 py-12">
         <h3 className="text-3xl font-bold text-gray-900 mb-8">{t.browseCities}</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
           {visibleCities.map(city => {
             const cityName = city.name[localeKey as keyof typeof city.name] || city.name.en;
             const citySlug = city.slug[localeKey as keyof typeof city.slug] || city.slug.en;
@@ -174,7 +174,7 @@ export default async function HomePage() {
            locale === 'fr' ? 'Profils en vedette' :
            locale === 'nl' ? 'Aanbevolen profielen' : 'Featured Profiles'}
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
           {profiles.slice(0, 6).map(profile => {
             const profileTitle = profile.title[localeKey as keyof typeof profile.title] || profile.title.en;
             const profileSlug = profile.slug_current[localeKey as keyof typeof profile.slug_current] || profile.slug_current.en;
@@ -188,7 +188,7 @@ export default async function HomePage() {
                 className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all overflow-hidden group"
               >
                 {/* Placeholder Image */}
-                <div className="aspect-[4/5] bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center">
+                <div className="aspect-[3/4] bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center">
                   <div className="text-6xl">💋</div>
                 </div>
 

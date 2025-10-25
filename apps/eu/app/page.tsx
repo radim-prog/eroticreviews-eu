@@ -11,14 +11,20 @@ export default function Home() {
     .sort((a, b) => b.created_at.getTime() - a.created_at.getTime())
     .slice(0, 6);
 
-  // Get top rated profiles (people + orgs combined, sorted by rating, limit 6)
+  // Get featured profiles (people + orgs combined, prioritize is_featured=true)
   const allPeople = getAllPeople();
   const allOrgs = getAllOrganizations();
   const allProfiles = [...allPeople, ...allOrgs];
-  const topRatedProfiles = allProfiles
-    .filter(p => p.avg_rating && p.reviews_count && p.reviews_count >= 3)
-    .sort((a, b) => (b.avg_rating || 0) - (a.avg_rating || 0))
-    .slice(0, 6);
+
+  // Featured profily (placené TOP pozice) mají přednost
+  const featuredProfiles = allProfiles.filter(p => (p as any).is_featured === true);
+
+  // Pokud není dost featured, doplníme nejlépe hodnocené
+  const nonFeaturedProfiles = allProfiles
+    .filter(p => (p as any).is_featured !== true && p.avg_rating && p.reviews_count && p.reviews_count >= 3)
+    .sort((a, b) => (b.avg_rating || 0) - (a.avg_rating || 0));
+
+  const topRatedProfiles = [...featuredProfiles, ...nonFeaturedProfiles].slice(0, 10);
 
   // Get newest profiles (last 30 days, limit 6)
   const thirtyDaysAgo = new Date();
@@ -85,13 +91,13 @@ export default function Home() {
           <div className="flex items-center justify-between mb-8">
             <div className="flex items-center gap-3">
               <Award className="w-8 h-8 text-yellow-500" />
-              <h2 className="text-3xl font-bold text-gray-900">Nejlépe hodnocené</h2>
+              <h2 className="text-3xl font-bold text-gray-900">Doporučené profily</h2>
             </div>
             <Link href="/top-rated" className="text-blue-600 hover:text-blue-700 font-semibold">
               Zobrazit všechny →
             </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
             {topRatedProfiles.map((profile) => {
               const isOrg = 'establishment_name' in profile;
               const linkPrefix = isOrg ? '/organizace' : '/profil';
@@ -102,7 +108,7 @@ export default function Home() {
                   href={`${linkPrefix}/${profile.slug}`}
                   className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden group"
                 >
-                  <div className="aspect-[4/3] bg-gradient-to-br from-yellow-50 to-yellow-100 relative overflow-hidden">
+                  <div className="aspect-[3/4] bg-gradient-to-br from-yellow-50 to-yellow-100 relative overflow-hidden">
                     <div className="absolute inset-0 flex items-center justify-center text-6xl opacity-50">
                       {isOrg ? '🏢' : '👤'}
                     </div>
@@ -137,7 +143,7 @@ export default function Home() {
       {/* Kategorie osob */}
       <section className="container mx-auto px-4 py-12">
         <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Osoby</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {Object.entries(PERSON_TYPES).map(([key, data]) => (
             <Link
               key={key}
@@ -162,7 +168,7 @@ export default function Home() {
       {/* Kategorie organizací */}
       <section className="container mx-auto px-4 py-12">
         <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Podniky & Salony</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {Object.entries(ORG_TYPES).map(([key, data]) => (
             <Link
               key={key}
@@ -196,7 +202,7 @@ export default function Home() {
               Zobrazit všechny →
             </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
             {newestProfiles.map((profile) => {
               const isOrg = 'establishment_name' in profile;
               const linkPrefix = isOrg ? '/organizace' : '/profil';
@@ -208,7 +214,7 @@ export default function Home() {
                   href={`${linkPrefix}/${profile.slug}`}
                   className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden group"
                 >
-                  <div className="aspect-[4/3] bg-gradient-to-br from-green-50 to-green-100 relative overflow-hidden">
+                  <div className="aspect-[3/4] bg-gradient-to-br from-green-50 to-green-100 relative overflow-hidden">
                     <div className="absolute inset-0 flex items-center justify-center text-6xl opacity-50">
                       {isOrg ? '🏢' : '👤'}
                     </div>

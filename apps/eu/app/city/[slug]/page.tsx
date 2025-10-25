@@ -64,7 +64,7 @@ export default async function CityPage({ params }: { params: Promise<{ slug: str
             </p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
             {cityProfiles.map(profile => {
               const profileTitle = profile.title[locale as keyof typeof profile.title] || profile.title.en;
               const profileSlug = profile.slug_current[locale as keyof typeof profile.slug_current] || profile.slug_current.en;
@@ -77,7 +77,7 @@ export default async function CityPage({ params }: { params: Promise<{ slug: str
                   className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all overflow-hidden group"
                 >
                   {/* Placeholder Image */}
-                  <div className="aspect-[4/5] bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center">
+                  <div className="aspect-[3/4] bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center">
                     <div className="text-7xl">💋</div>
                   </div>
 
