@@ -103,7 +103,7 @@ export default function CategoryPage({
               <select
                 value={selectedLocation}
                 onChange={(e) => setSelectedLocation(e.target.value)}
-                className="w-full border border-gray-300 rounded-lg px-4 py-2"
+                className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-900 font-medium"
               >
                 <option value="all">Všechny lokality</option>
                 {locations.map((loc) => (
@@ -122,7 +122,7 @@ export default function CategoryPage({
               <select
                 value={selectedRating}
                 onChange={(e) => setSelectedRating(e.target.value)}
-                className="w-full border border-gray-300 rounded-lg px-4 py-2"
+                className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-900 font-medium"
               >
                 <option value="all">Všechna hodnocení</option>
                 <option value="4">4+ hvězdiček</option>
@@ -138,7 +138,7 @@ export default function CategoryPage({
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
-                className="w-full border border-gray-300 rounded-lg px-4 py-2"
+                className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-900 font-medium"
               >
                 <option value="rating">Podle hodnocení</option>
                 <option value="reviews">Podle počtu recenzí</option>
@@ -147,7 +147,7 @@ export default function CategoryPage({
             </div>
           </div>
 
-          <div className="mt-4 text-sm text-gray-600">
+          <div className="mt-4 text-sm text-gray-900">
             Zobrazeno <strong>{filteredItems.length}</strong> z {items.length} {type === "person" ? "osob" : "organizací"}
           </div>
         </div>

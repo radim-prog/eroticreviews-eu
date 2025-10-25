@@ -127,7 +127,7 @@ export default function RecenzePage() {
               <span>Pouze ověřené</span>
             </label>
           </div>
-          <div className="mt-2 text-sm text-gray-600">
+          <div className="mt-2 text-sm text-gray-900">
             Zobrazeno {filteredReviews.length} z {allReviews.length} recenzí
           </div>
         </div>
