@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { generateReviewsPageMeta } from "@/lib/seo/meta-tags";
+import { generateReviewsPageMeta } from "@/lib-cz/seo/meta-tags";
 
 export const metadata: Metadata = generateReviewsPageMeta();
 

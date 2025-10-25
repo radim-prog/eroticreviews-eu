@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { generateSearchMeta } from "@/lib/seo/meta-tags";
+import { generateSearchMeta } from "@/lib-cz/seo/meta-tags";
 
 export const metadata: Metadata = generateSearchMeta();
 
